@@ -1,0 +1,20 @@
+C:\Users\Nithyan KUGATHASAN\AppData\Local\Temporary Projects\photoViewer\bin\Debug\photoViewer.exe.config
+C:\Users\Nithyan KUGATHASAN\AppData\Local\Temporary Projects\photoViewer\bin\Debug\photoViewer.exe
+C:\Users\Nithyan KUGATHASAN\AppData\Local\Temporary Projects\photoViewer\bin\Debug\photoViewer.pdb
+C:\Users\Nithyan KUGATHASAN\AppData\Local\Temporary Projects\photoViewer\obj\Debug\photoViewer.csprojResolveAssemblyReference.cache
+C:\Users\Nithyan KUGATHASAN\AppData\Local\Temporary Projects\photoViewer\obj\Debug\photoViewer.displayModeButton.resources
+C:\Users\Nithyan KUGATHASAN\AppData\Local\Temporary Projects\photoViewer\obj\Debug\photoViewer.mainWindow.resources
+C:\Users\Nithyan KUGATHASAN\AppData\Local\Temporary Projects\photoViewer\obj\Debug\photoViewer.Properties.Resources.resources
+C:\Users\Nithyan KUGATHASAN\AppData\Local\Temporary Projects\photoViewer\obj\Debug\photoViewer.csproj.GenerateResource.Cache
+C:\Users\Nithyan KUGATHASAN\AppData\Local\Temporary Projects\photoViewer\obj\Debug\photoViewer.exe
+C:\Users\Nithyan KUGATHASAN\AppData\Local\Temporary Projects\photoViewer\obj\Debug\photoViewer.pdb
+C:\Users\Nithyan KUGATHASAN\Documents\GitHub\Framework_CE\Lab3\photoViewer\photoViewer\bin\Debug\photoViewer.exe.config
+C:\Users\Nithyan KUGATHASAN\Documents\GitHub\Framework_CE\Lab3\photoViewer\photoViewer\obj\Debug\photoViewer.exe
+C:\Users\Nithyan KUGATHASAN\Documents\GitHub\Framework_CE\Lab3\photoViewer\photoViewer\obj\Debug\photoViewer.pdb
+C:\Users\Nithyan KUGATHASAN\Documents\GitHub\Framework_CE\Lab3\photoViewer\photoViewer\bin\Debug\photoViewer.exe
+C:\Users\Nithyan KUGATHASAN\Documents\GitHub\Framework_CE\Lab3\photoViewer\photoViewer\bin\Debug\photoViewer.pdb
+C:\Users\Nithyan KUGATHASAN\Documents\GitHub\Framework_CE\Lab3\photoViewer\photoViewer\obj\Debug\photoViewer.csprojResolveAssemblyReference.cache
+C:\Users\Nithyan KUGATHASAN\Documents\GitHub\Framework_CE\Lab3\photoViewer\photoViewer\obj\Debug\photoViewer.displayModeButton.resources
+C:\Users\Nithyan KUGATHASAN\Documents\GitHub\Framework_CE\Lab3\photoViewer\photoViewer\obj\Debug\photoViewer.mainWindow.resources
+C:\Users\Nithyan KUGATHASAN\Documents\GitHub\Framework_CE\Lab3\photoViewer\photoViewer\obj\Debug\photoViewer.Properties.Resources.resources
+C:\Users\Nithyan KUGATHASAN\Documents\GitHub\Framework_CE\Lab3\photoViewer\photoViewer\obj\Debug\photoViewer.csproj.GenerateResource.Cache
