@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Album.cs" />
+    <Compile Include="AlbumView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlbumView.Designer.cs">
+      <DependentUpon>AlbumView.cs</DependentUpon>
+    </Compile>
     <Compile Include="displayModeButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="Picture.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlbumView.resx">
+      <DependentUpon>AlbumView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="displayModeButton.resx">
       <DependentUpon>displayModeButton.cs</DependentUpon>
     </EmbeddedResource>

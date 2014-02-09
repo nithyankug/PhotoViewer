@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace photoViewer
 {
+    class AlbumList : List<Album>
+    {
+    }
+
     class Album
     {
         // internal attributes
@@ -16,7 +20,15 @@ namespace photoViewer
         private FileInfo detailledInfo { get; set; }
         private string[] keywords{ get; set;} 
         private Image coverPicture {get;set;}
+        private PictureList Pictures { get; set; }
 
-
+        public Album(PictureList pictures)
+        {
+            this.Pictures = pictures;
+            this.name = "quiche"; // FIXME - remove this
+        }
     }
+
+
+
 }

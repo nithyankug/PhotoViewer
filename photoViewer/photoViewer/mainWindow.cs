@@ -11,8 +11,6 @@ using System.Runtime.InteropServices;
 
 namespace photoViewer
 {
-    
-
     public partial class mainWindow : Form
     {
         // makes the borderless form moveable, we send Message to Windows to move the form given position of the mouse.
@@ -26,18 +24,50 @@ namespace photoViewer
         public static extern bool ReleaseCapture();
         //__________
 
+        private AlbumList albums;
+        private ImageList albumsImageList;
+
+
         public mainWindow()
         {
             InitializeComponent();
+            albumsImageList = new ImageList();
+            albumsList.SmallImageList = albumsImageList;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; // removes the titleBar
+        }
+
+        private void _RefreshAlbumView()
+        {
+            albumsList.Items.Clear();
+            foreach (Album a in albums)
+            {
+                AlbumView view = new AlbumView();
+                ListViewItem item = new ListViewItem();
+                item.ImageKey = "";
+                item.Name = "tarte";
+                albumsList.Items.Add(item);
+                //albumsList.Items.Add(view);
+                
+                //Console.WriteLine("====>");
+                //Console.WriteLine(view);
+            }
         }
 
         private void mainWindow_Load(object sender, EventArgs e)
         {
+            /* Unarchive data (AlbumList) */
+
             PictureList l, ll;
             l = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
             ll = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures));
+            l.ExtendWithList(ll);
+
+            albums = new AlbumList();
+            albums.Add(new Album(l));
+
+            _RefreshAlbumView();
         }
+
 
         protected override CreateParams CreateParams
         {

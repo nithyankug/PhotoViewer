@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.albumList = new System.Windows.Forms.ListBox();
-            this.pictureList = new System.Windows.Forms.ListBox();
             this.reduceButton = new System.Windows.Forms.Button();
             this.enlargeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
@@ -38,30 +36,9 @@
             this.viewThreeButton = new photoViewer.displayModeButton();
             this.viewTwoButton = new photoViewer.displayModeButton();
             this.viewOneButton = new photoViewer.displayModeButton();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.albumsList = new System.Windows.Forms.ListView();
             this.SuspendLayout();
-            // 
-            // albumList
-            // 
-            this.albumList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.albumList.FormattingEnabled = true;
-            this.albumList.Location = new System.Drawing.Point(12, 58);
-            this.albumList.Name = "albumList";
-            this.albumList.Size = new System.Drawing.Size(172, 381);
-            this.albumList.TabIndex = 0;
-            this.albumList.SelectedIndexChanged += new System.EventHandler(this.albumList_SelectedIndexChanged);
-            // 
-            // pictureList
-            // 
-            this.pictureList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureList.FormattingEnabled = true;
-            this.pictureList.Location = new System.Drawing.Point(200, 58);
-            this.pictureList.Name = "pictureList";
-            this.pictureList.Size = new System.Drawing.Size(584, 381);
-            this.pictureList.TabIndex = 1;
             // 
             // reduceButton
             // 
@@ -130,12 +107,30 @@
             this.viewOneButton.Size = new System.Drawing.Size(46, 28);
             this.viewOneButton.TabIndex = 2;
             // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(198, 59);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(586, 380);
+            this.listView2.TabIndex = 11;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // albumsList
+            // 
+            this.albumsList.Location = new System.Drawing.Point(12, 58);
+            this.albumsList.Name = "albumsList";
+            this.albumsList.Size = new System.Drawing.Size(182, 381);
+            this.albumsList.TabIndex = 10;
+            this.albumsList.UseCompatibleStateImageBehavior = false;
+            // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(796, 496);
+            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.albumsList);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.enlargeButton);
             this.Controls.Add(this.reduceButton);
@@ -144,8 +139,6 @@
             this.Controls.Add(this.viewThreeButton);
             this.Controls.Add(this.viewTwoButton);
             this.Controls.Add(this.viewOneButton);
-            this.Controls.Add(this.pictureList);
-            this.Controls.Add(this.albumList);
             this.Name = "mainWindow";
             this.Text = "mainWindow";
             this.Load += new System.EventHandler(this.mainWindow_Load);
@@ -156,8 +149,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox albumList;
-        private System.Windows.Forms.ListBox pictureList;
         private displayModeButton viewOneButton;
         private displayModeButton viewTwoButton;
         private displayModeButton viewThreeButton;
@@ -166,6 +157,8 @@
         private System.Windows.Forms.Button reduceButton;
         private System.Windows.Forms.Button enlargeButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView albumsList;
     }
 }
 
