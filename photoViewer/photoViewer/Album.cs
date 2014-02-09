@@ -18,15 +18,5 @@ namespace photoViewer
         private Image coverPicture {get;set;}
 
 
-        // constructor
-        public Album()
-        {
-            name = null;
-            subTitle = null;
-            detailledInfo = null;
-            keywords = new string[3] { null, null, null };
-            coverPicture = null;
-        }
-
     }
 }

@@ -34,7 +34,9 @@ namespace photoViewer
 
         private void mainWindow_Load(object sender, EventArgs e)
         {
-
+            PictureList l, ll;
+            l = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+            ll = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures));
         }
 
         protected override CreateParams CreateParams

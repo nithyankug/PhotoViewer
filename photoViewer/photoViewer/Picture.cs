@@ -8,6 +8,16 @@ using System.Threading.Tasks;
 
 namespace photoViewer
 {
+    class PictureList : List<Picture>
+    {
+        public void ExtendWithList(PictureList extend)
+        {
+            if (extend == null) return;
+            foreach (Picture p in extend)
+                this.Add(p);
+        }
+    }
+
     class Picture
     {
         // internal attributes
@@ -18,19 +28,52 @@ namespace photoViewer
         private string comment { get; set; }
         private int nbInstance { get; set; }
 
-        // constructor
-        public Picture()
+        public Picture(string path)
         {
-            // basic initialization
-            picInfo = null;
-            pictureFile = null;
-            category = "" ;
-            rating = 0;
-            comment = "";
-            nbInstance = 0;
+            picInfo = new FileInfo(path);
         }
 
-        
+        static public bool IsSupportedFormat(string extension)
+        {
+            bool isSupported = false;
+
+            if (extension == null) return false;
+            switch (extension)
+            {
+                /* Add extensions to this list IF they are supported! */
+                case ".jpg":
+                case ".png":
+                case ".jpeg":
+                    isSupported = true;
+                    break;
+            }
+
+            return isSupported;
+        }
+
+        static public PictureList ExtractListFromPath(string path, bool recursive = true)
+        {
+            PictureList list = new PictureList();
+            
+            foreach (string f in Directory.GetFiles(path))
+            {
+                if (IsSupportedFormat(Path.GetExtension(f)))
+                {
+                    Picture p = new Picture(f);
+                    list.Add(p);
+                }
+            }
+
+            if (recursive)
+            {
+                PictureList l = null;
+                foreach (string d in Directory.GetDirectories(path))
+                    l = ExtractListFromPath(d, true);
+                list.ExtendWithList(l);
+            }
+
+            return list;
+        }
 
     }
 }
