@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlbumView));
             this.thumbnail = new System.Windows.Forms.PictureBox();
-            this.name = new System.Windows.Forms.Label();
+            this.theAlbum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,20 +44,21 @@
             this.thumbnail.TabIndex = 0;
             this.thumbnail.TabStop = false;
             // 
-            // name
+            // theAlbum
             // 
-            this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(4, 127);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(36, 13);
-            this.name.TabIndex = 1;
-            this.name.Text = "Album";
+            this.theAlbum.AutoSize = true;
+            this.theAlbum.Location = new System.Drawing.Point(4, 127);
+            this.theAlbum.Name = "theAlbum";
+            this.theAlbum.Size = new System.Drawing.Size(36, 13);
+            this.theAlbum.TabIndex = 1;
+            this.theAlbum.Text = "Album";
+            this.theAlbum.Click += new System.EventHandler(this.name_Click);
             // 
             // AlbumView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.name);
+            this.Controls.Add(this.theAlbum);
             this.Controls.Add(this.thumbnail);
             this.Name = "AlbumView";
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).EndInit();
@@ -69,7 +70,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox thumbnail;
-        private System.Windows.Forms.Label name;
+        private System.Windows.Forms.Label theAlbum;
 
     }
 }

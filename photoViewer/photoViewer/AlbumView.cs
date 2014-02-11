@@ -16,5 +16,10 @@ namespace photoViewer
         {
             InitializeComponent();
         }
+
+        private void name_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

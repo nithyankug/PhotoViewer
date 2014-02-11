@@ -32,20 +32,25 @@ namespace photoViewer
         {
             InitializeComponent();
             albumsImageList = new ImageList();
-            albumsList.SmallImageList = albumsImageList;
+         //   albumsList.SmallImageList = albumsImageList;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; // removes the titleBar
         }
 
         private void _RefreshAlbumView()
         {
-            albumsList.Items.Clear();
+            albumsTable.Controls.Clear();
+       //     albumsList.Items.Clear();
             foreach (Album a in albums)
             {
                 AlbumView view = new AlbumView();
                 ListViewItem item = new ListViewItem();
-                item.ImageKey = "";
-                item.Name = "tarte";
-                albumsList.Items.Add(item);
+                
+                //view.Name = "quiche";
+               // view.Text = "qiche";
+               // item.ImageKey = "";
+                //item.Name = "tarte";
+                albumsTable.Controls.Add(view);
+                //albumsList.Items.Add(item);
                 //albumsList.Items.Add(view);
                 
                 //Console.WriteLine("====>");
@@ -120,6 +125,11 @@ namespace photoViewer
         }
 
         private void addAlbButton_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
