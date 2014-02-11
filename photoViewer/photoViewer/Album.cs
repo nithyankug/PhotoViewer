@@ -42,7 +42,4 @@ namespace photoViewer
             return thumbnail;
         }
     }
-
-
-
 }

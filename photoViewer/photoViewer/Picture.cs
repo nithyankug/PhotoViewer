@@ -51,7 +51,7 @@ namespace photoViewer
         static public PictureList ExtractListFromPath(string path, bool recursive = true)
         {
             PictureList list = new PictureList();
-            
+            // FIXME is path is a file, import it!
             foreach (string f in Directory.GetFiles(path))
             {
                 if (IsSupportedFormat(Path.GetExtension(f)))
