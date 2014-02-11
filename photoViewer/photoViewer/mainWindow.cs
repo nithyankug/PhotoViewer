@@ -43,8 +43,10 @@ namespace photoViewer
             foreach (Album a in albums)
             {
                 AlbumView view = new AlbumView();
-                ListViewItem item = new ListViewItem();
-                
+                Image img;
+                img = Image.FromFile("C:\\a.jpg");
+                view.SetAlbumName("quiche");
+                view.SetPicture(img);
                 //view.Name = "quiche";
                // view.Text = "qiche";
                // item.ImageKey = "";

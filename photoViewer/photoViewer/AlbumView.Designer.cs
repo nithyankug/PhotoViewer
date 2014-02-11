@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlbumView));
             this.thumbnail = new System.Windows.Forms.PictureBox();
             this.theAlbum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).BeginInit();
@@ -36,11 +35,12 @@
             // 
             // thumbnail
             // 
-            this.thumbnail.ErrorImage = ((System.Drawing.Image)(resources.GetObject("thumbnail.ErrorImage")));
-            this.thumbnail.InitialImage = ((System.Drawing.Image)(resources.GetObject("thumbnail.InitialImage")));
+            this.thumbnail.ErrorImage = null;
+            this.thumbnail.InitialImage = null;
             this.thumbnail.Location = new System.Drawing.Point(3, 3);
             this.thumbnail.Name = "thumbnail";
             this.thumbnail.Size = new System.Drawing.Size(144, 117);
+            this.thumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.thumbnail.TabIndex = 0;
             this.thumbnail.TabStop = false;
             // 

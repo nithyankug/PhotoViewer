@@ -17,6 +17,16 @@ namespace photoViewer
             InitializeComponent();
         }
 
+        public void SetAlbumName(string str)
+        {
+            this.theAlbum.Text = str;
+        }
+
+        public void SetPicture(Image img)
+        {
+            this.thumbnail.Image = img;
+        }
+
         private void name_Click(object sender, EventArgs e)
         {
 
