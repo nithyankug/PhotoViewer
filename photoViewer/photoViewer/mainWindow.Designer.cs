@@ -31,13 +31,13 @@
             this.reduceButton = new System.Windows.Forms.Button();
             this.enlargeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.albumsList = new System.Windows.Forms.ListView();
             this.delAlbButton = new photoViewer.displayModeButton();
             this.addAlbButton = new photoViewer.displayModeButton();
             this.viewThreeButton = new photoViewer.displayModeButton();
             this.viewTwoButton = new photoViewer.displayModeButton();
             this.viewOneButton = new photoViewer.displayModeButton();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.albumsList = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // reduceButton
@@ -70,10 +70,26 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.button3_Click);
             // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(198, 35);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(586, 449);
+            this.listView2.TabIndex = 11;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // albumsList
+            // 
+            this.albumsList.Location = new System.Drawing.Point(12, 34);
+            this.albumsList.Name = "albumsList";
+            this.albumsList.Size = new System.Drawing.Size(182, 450);
+            this.albumsList.TabIndex = 10;
+            this.albumsList.UseCompatibleStateImageBehavior = false;
+            // 
             // delAlbButton
             // 
             this.delAlbButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.delAlbButton.Location = new System.Drawing.Point(100, 445);
+            this.delAlbButton.Location = new System.Drawing.Point(52, -6);
             this.delAlbButton.Name = "delAlbButton";
             this.delAlbButton.Size = new System.Drawing.Size(46, 46);
             this.delAlbButton.TabIndex = 6;
@@ -81,47 +97,32 @@
             // addAlbButton
             // 
             this.addAlbButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addAlbButton.Location = new System.Drawing.Point(48, 445);
+            this.addAlbButton.Location = new System.Drawing.Point(13, -6);
             this.addAlbButton.Name = "addAlbButton";
             this.addAlbButton.Size = new System.Drawing.Size(46, 46);
             this.addAlbButton.TabIndex = 5;
+            this.addAlbButton.Load += new System.EventHandler(this.addAlbButton_Load);
             // 
             // viewThreeButton
             // 
-            this.viewThreeButton.Location = new System.Drawing.Point(302, 24);
+            this.viewThreeButton.Location = new System.Drawing.Point(279, -6);
             this.viewThreeButton.Name = "viewThreeButton";
             this.viewThreeButton.Size = new System.Drawing.Size(46, 28);
             this.viewThreeButton.TabIndex = 4;
             // 
             // viewTwoButton
             // 
-            this.viewTwoButton.Location = new System.Drawing.Point(250, 24);
+            this.viewTwoButton.Location = new System.Drawing.Point(238, -6);
             this.viewTwoButton.Name = "viewTwoButton";
             this.viewTwoButton.Size = new System.Drawing.Size(46, 28);
             this.viewTwoButton.TabIndex = 3;
             // 
             // viewOneButton
             // 
-            this.viewOneButton.Location = new System.Drawing.Point(198, 24);
+            this.viewOneButton.Location = new System.Drawing.Point(198, -6);
             this.viewOneButton.Name = "viewOneButton";
             this.viewOneButton.Size = new System.Drawing.Size(46, 28);
             this.viewOneButton.TabIndex = 2;
-            // 
-            // listView2
-            // 
-            this.listView2.Location = new System.Drawing.Point(198, 59);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(586, 380);
-            this.listView2.TabIndex = 11;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // albumsList
-            // 
-            this.albumsList.Location = new System.Drawing.Point(12, 58);
-            this.albumsList.Name = "albumsList";
-            this.albumsList.Size = new System.Drawing.Size(182, 381);
-            this.albumsList.TabIndex = 10;
-            this.albumsList.UseCompatibleStateImageBehavior = false;
             // 
             // mainWindow
             // 

@@ -118,5 +118,10 @@ namespace photoViewer
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 
         }
+
+        private void addAlbButton_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
