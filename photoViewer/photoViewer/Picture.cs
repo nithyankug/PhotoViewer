@@ -35,8 +35,6 @@ namespace photoViewer
 
         static public bool IsSupportedFormat(string extension)
         {
-            bool isSupported = false;
-
             if (extension == null) return false;
             switch (extension)
             {
@@ -45,11 +43,10 @@ namespace photoViewer
                 case ".png":
                 case ".jpeg":
                 case ".bmp":
-                    isSupported = true;
-                    break;
+                    return true;
             }
 
-            return isSupported;
+            return false;
         }
 
         static public PictureList ExtractListFromPath(string path, bool recursive = true)
