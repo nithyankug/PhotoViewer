@@ -72,6 +72,9 @@
             // 
             // listView2
             // 
+            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView2.Location = new System.Drawing.Point(198, 35);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(586, 449);
@@ -80,6 +83,8 @@
             // 
             // albumsTable
             // 
+            this.albumsTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.albumsTable.BackColor = System.Drawing.SystemColors.Window;
             this.albumsTable.ColumnCount = 1;
             this.albumsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
