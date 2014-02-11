@@ -44,6 +44,7 @@ namespace photoViewer
                 case ".jpg":
                 case ".png":
                 case ".jpeg":
+                case ".bmp":
                     isSupported = true;
                     break;
             }
