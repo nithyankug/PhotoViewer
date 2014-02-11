@@ -43,7 +43,7 @@
             // reduceButton
             // 
             this.reduceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.reduceButton.Location = new System.Drawing.Point(702, -4);
+            this.reduceButton.Location = new System.Drawing.Point(890, -4);
             this.reduceButton.Name = "reduceButton";
             this.reduceButton.Size = new System.Drawing.Size(26, 23);
             this.reduceButton.TabIndex = 7;
@@ -53,7 +53,7 @@
             // enlargeButton
             // 
             this.enlargeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.enlargeButton.Location = new System.Drawing.Point(730, -4);
+            this.enlargeButton.Location = new System.Drawing.Point(918, -4);
             this.enlargeButton.Name = "enlargeButton";
             this.enlargeButton.Size = new System.Drawing.Size(26, 23);
             this.enlargeButton.TabIndex = 8;
@@ -63,7 +63,7 @@
             // closeButton
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Location = new System.Drawing.Point(758, -4);
+            this.closeButton.Location = new System.Drawing.Point(946, -4);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(26, 23);
             this.closeButton.TabIndex = 9;
@@ -77,7 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView2.Location = new System.Drawing.Point(198, 35);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(586, 449);
+            this.listView2.Size = new System.Drawing.Size(774, 415);
             this.listView2.TabIndex = 11;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -92,7 +92,7 @@
             this.albumsTable.Name = "albumsTable";
             this.albumsTable.RowCount = 1;
             this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.albumsTable.Size = new System.Drawing.Size(180, 449);
+            this.albumsTable.Size = new System.Drawing.Size(180, 415);
             this.albumsTable.TabIndex = 12;
             this.albumsTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -137,7 +137,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(796, 496);
+            this.ClientSize = new System.Drawing.Size(984, 462);
             this.Controls.Add(this.albumsTable);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.closeButton);
@@ -148,6 +148,7 @@
             this.Controls.Add(this.viewThreeButton);
             this.Controls.Add(this.viewTwoButton);
             this.Controls.Add(this.viewOneButton);
+            this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "mainWindow";
             this.Text = "mainWindow";
             this.Load += new System.EventHandler(this.mainWindow_Load);
