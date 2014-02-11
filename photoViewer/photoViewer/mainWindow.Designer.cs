@@ -32,12 +32,12 @@
             this.enlargeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
+            this.albumsTable = new System.Windows.Forms.TableLayoutPanel();
             this.delAlbButton = new photoViewer.displayModeButton();
             this.addAlbButton = new photoViewer.displayModeButton();
             this.viewThreeButton = new photoViewer.displayModeButton();
             this.viewTwoButton = new photoViewer.displayModeButton();
             this.viewOneButton = new photoViewer.displayModeButton();
-            this.albumsTable = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
             // reduceButton
@@ -78,9 +78,21 @@
             this.listView2.TabIndex = 11;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
+            // albumsTable
+            // 
+            this.albumsTable.BackColor = System.Drawing.SystemColors.Window;
+            this.albumsTable.ColumnCount = 1;
+            this.albumsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.albumsTable.Location = new System.Drawing.Point(12, 35);
+            this.albumsTable.Name = "albumsTable";
+            this.albumsTable.RowCount = 1;
+            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.albumsTable.Size = new System.Drawing.Size(180, 449);
+            this.albumsTable.TabIndex = 12;
+            this.albumsTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
             // delAlbButton
             // 
-            this.delAlbButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.delAlbButton.Location = new System.Drawing.Point(52, -6);
             this.delAlbButton.Name = "delAlbButton";
             this.delAlbButton.Size = new System.Drawing.Size(46, 46);
@@ -88,7 +100,6 @@
             // 
             // addAlbButton
             // 
-            this.addAlbButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addAlbButton.Location = new System.Drawing.Point(13, -6);
             this.addAlbButton.Name = "addAlbButton";
             this.addAlbButton.Size = new System.Drawing.Size(46, 46);
@@ -115,19 +126,6 @@
             this.viewOneButton.Name = "viewOneButton";
             this.viewOneButton.Size = new System.Drawing.Size(46, 28);
             this.viewOneButton.TabIndex = 2;
-            // 
-            // albumsTable
-            // 
-            this.albumsTable.BackColor = System.Drawing.SystemColors.Window;
-            this.albumsTable.ColumnCount = 1;
-            this.albumsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.albumsTable.Location = new System.Drawing.Point(12, 35);
-            this.albumsTable.Name = "albumsTable";
-            this.albumsTable.RowCount = 1;
-            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.albumsTable.Size = new System.Drawing.Size(180, 449);
-            this.albumsTable.TabIndex = 12;
-            this.albumsTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // mainWindow
             // 
