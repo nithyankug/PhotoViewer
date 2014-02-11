@@ -182,7 +182,7 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
-
+*.suo
 *.exe
 photoViewer/photoViewer/obj
 photoViewer/photoViewer/bin
