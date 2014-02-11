@@ -59,5 +59,9 @@ namespace photoViewer.Properties {
                 resourceCulture = value;
             }
         }
+
+        public static System.Drawing.Image DemoImage_1 { get; set; }
+
+        public static System.Drawing.Image DemoPicture_1 { get; set; }
     }
 }

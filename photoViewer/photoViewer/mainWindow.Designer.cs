@@ -31,8 +31,8 @@
             this.reduceButton = new System.Windows.Forms.Button();
             this.enlargeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.albumsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.tableImages = new System.Windows.Forms.TableLayoutPanel();
             this.delAlbButton = new photoViewer.displayModeButton();
             this.addAlbButton = new photoViewer.displayModeButton();
             this.viewThreeButton = new photoViewer.displayModeButton();
@@ -70,17 +70,6 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.button3_Click);
             // 
-            // listView2
-            // 
-            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView2.Location = new System.Drawing.Point(198, 35);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(774, 415);
-            this.listView2.TabIndex = 11;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
             // albumsTable
             // 
             this.albumsTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -95,6 +84,28 @@
             this.albumsTable.Size = new System.Drawing.Size(180, 415);
             this.albumsTable.TabIndex = 12;
             this.albumsTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // tableImages
+            // 
+            this.tableImages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableImages.BackColor = System.Drawing.SystemColors.Window;
+            this.tableImages.ColumnCount = 1;
+            this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableImages.Location = new System.Drawing.Point(199, 35);
+            this.tableImages.Name = "tableImages";
+            this.tableImages.RowCount = 8;
+            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableImages.Size = new System.Drawing.Size(773, 415);
+            this.tableImages.TabIndex = 13;
             // 
             // delAlbButton
             // 
@@ -138,8 +149,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(984, 462);
+            this.Controls.Add(this.tableImages);
             this.Controls.Add(this.albumsTable);
-            this.Controls.Add(this.listView2);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.enlargeButton);
             this.Controls.Add(this.reduceButton);
@@ -167,8 +178,8 @@
         private System.Windows.Forms.Button reduceButton;
         private System.Windows.Forms.Button enlargeButton;
         private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.TableLayoutPanel albumsTable;
+        private System.Windows.Forms.TableLayoutPanel tableImages;
     }
 }
 

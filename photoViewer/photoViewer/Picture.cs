@@ -5,24 +5,16 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+
 
 namespace photoViewer
-{
-    class PictureList : List<Picture>
-    {
-        public void ExtendWithList(PictureList extend)
-        {
-            if (extend == null) return;
-            foreach (Picture p in extend)
-                this.Add(p);
-        }
-    }
-
+{ 
     class Picture
     {
         // internal attributes
         private FileInfo picInfo { get; set; }
-        private Image pictureFile { get; set; }
+        public Image pictureFile { get; set; }
         private string category { get; set; }
         private int rating { get; set; }
         private string comment { get; set; }
@@ -31,6 +23,13 @@ namespace photoViewer
         public Picture(string path)
         {
             picInfo = new FileInfo(path);
+        }
+
+        public void Load()
+        {
+            if (picInfo == null) return;
+            pictureFile = Image.FromFile(picInfo.FullName);
+            Console.WriteLine("Loading: " + picInfo.FullName);
         }
 
         static public bool IsSupportedFormat(string extension)
@@ -74,4 +73,21 @@ namespace photoViewer
         }
 
     }
+
+    class PictureList : List<Picture>
+    {
+        public void ExtendWithList(PictureList extend)
+        {
+            if (extend == null) return;
+            foreach (Picture p in extend)
+                this.Add(p);
+        }
+
+        public void LoadAll()
+        {
+            foreach (Picture p in this)
+                p.Load();
+        }
+    }
+
 }

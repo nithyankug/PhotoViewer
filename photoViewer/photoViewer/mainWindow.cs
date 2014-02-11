@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
 using System.Runtime.InteropServices;
 
 namespace photoViewer
@@ -37,24 +38,30 @@ namespace photoViewer
         private void _RefreshAlbumView()
         {
             albumsTable.Controls.Clear();
-       //     albumsList.Items.Clear();
+      
             foreach (Album a in albums)
             {
                 AlbumView view = new AlbumView();
-                Image img;
-                img = Image.FromFile("C:\\a.jpg");
-                view.SetAlbumName("quiche");
-                view.SetPicture(img);
-                //view.Name = "quiche";
-               // view.Text = "qiche";
-               // item.ImageKey = "";
-                //item.Name = "tarte";
-                albumsTable.Controls.Add(view);
-                //albumsList.Items.Add(item);
-                //albumsList.Items.Add(view);
+                Picture thumb = a.GetThumbnail();
                 
-                //Console.WriteLine("====>");
-                //Console.WriteLine(view);
+                view.SetAlbumName("My first albim");
+                view.SetPicture(thumb.pictureFile);
+
+                albumsTable.Controls.Add(view);
+
+                if (a.IsActive) // FIXME
+                {
+                    int i = 0;
+                    foreach (Picture p in a.GetPictureList())
+                    {
+                        AlbumView pv = new AlbumView(); //FIXME
+                        pv.SetAlbumName("");
+                        Console.WriteLine("Iterating... " + p.pictureFile);
+                        pv.SetPicture(p.pictureFile);
+                        tableImages.Controls.Add(pv);
+                        tableImages.RowCount++;
+                    }
+                }
             }
         }
 
@@ -66,9 +73,11 @@ namespace photoViewer
             l = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
             ll = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures));
             l.ExtendWithList(ll);
+            l.LoadAll();
 
             albums = new AlbumList();
             albums.Add(new Album(l));
+            
 
             _RefreshAlbumView();
         }

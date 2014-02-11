@@ -21,11 +21,25 @@ namespace photoViewer
         private string[] keywords{ get; set;} 
         private Image coverPicture {get;set;}
         private PictureList Pictures { get; set; }
+        private Picture thumbnail {get; set;}
+        public bool IsActive { get; set; }
 
         public Album(PictureList pictures)
         {
             this.Pictures = pictures;
-            this.name = "quiche"; // FIXME - remove this
+            this.IsActive = true;
+        }
+
+        public PictureList GetPictureList()
+        {
+            return Pictures;
+        }
+
+        public Picture GetThumbnail()
+        {
+            if (thumbnail == null)
+                return Pictures[0];
+            return thumbnail;
         }
     }
 
