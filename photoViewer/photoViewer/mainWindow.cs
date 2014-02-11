@@ -25,14 +25,12 @@ namespace photoViewer
         //__________
 
         private AlbumList albums;
-        private ImageList albumsImageList;
 
 
         public mainWindow()
         {
             InitializeComponent();
-            albumsImageList = new ImageList();
-         //   albumsList.SmallImageList = albumsImageList;
+         
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; // removes the titleBar
         }
 
