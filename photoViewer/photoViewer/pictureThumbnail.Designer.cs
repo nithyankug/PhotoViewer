@@ -1,6 +1,6 @@
 ﻿namespace photoViewer
 {
-    partial class AlbumView
+    partial class pictureThumbnail
     {
         /// <summary> 
         /// Required designer variable.
@@ -35,32 +35,38 @@
             // 
             // thumbnail
             // 
+            this.thumbnail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.thumbnail.ErrorImage = null;
             this.thumbnail.InitialImage = null;
-            this.thumbnail.Location = new System.Drawing.Point(3, 3);
+            this.thumbnail.Location = new System.Drawing.Point(5, 5);
             this.thumbnail.Name = "thumbnail";
-            this.thumbnail.Size = new System.Drawing.Size(144, 117);
+            this.thumbnail.Size = new System.Drawing.Size(120, 120);
             this.thumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.thumbnail.TabIndex = 0;
             this.thumbnail.TabStop = false;
             // 
             // theAlbum
             // 
+            this.theAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.theAlbum.AutoSize = true;
-            this.theAlbum.Location = new System.Drawing.Point(4, 127);
+            this.theAlbum.Location = new System.Drawing.Point(47, 129);
             this.theAlbum.Name = "theAlbum";
             this.theAlbum.Size = new System.Drawing.Size(36, 13);
             this.theAlbum.TabIndex = 1;
             this.theAlbum.Text = "Album";
+            this.theAlbum.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.theAlbum.Click += new System.EventHandler(this.name_Click);
             // 
             // AlbumView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.theAlbum);
             this.Controls.Add(this.thumbnail);
             this.Name = "AlbumView";
+            this.Size = new System.Drawing.Size(130, 150);
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -45,11 +45,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Album.cs" />
-    <Compile Include="AlbumView.cs">
+    <Compile Include="albumThumbnail.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AlbumView.Designer.cs">
-      <DependentUpon>AlbumView.cs</DependentUpon>
+    <Compile Include="albumThumbnail.Designer.cs">
+      <DependentUpon>albumThumbnail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pictureThumbnail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pictureThumbnail.Designer.cs">
+      <DependentUpon>pictureThumbnail.cs</DependentUpon>
     </Compile>
     <Compile Include="displayModeButton.cs">
       <SubType>UserControl</SubType>
@@ -71,8 +77,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AlbumView.resx">
-      <DependentUpon>AlbumView.cs</DependentUpon>
+    <EmbeddedResource Include="albumThumbnail.resx">
+      <DependentUpon>albumThumbnail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pictureThumbnail.resx">
+      <DependentUpon>pictureThumbnail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="displayModeButton.resx">
       <DependentUpon>displayModeButton.cs</DependentUpon>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.displayButton = new System.Windows.Forms.Button();
+            this.albumView1 = new photoViewer.pictureThumbnail();
             this.SuspendLayout();
             // 
             // displayButton
@@ -40,10 +41,18 @@
             this.displayButton.UseVisualStyleBackColor = true;
             this.displayButton.Click += new System.EventHandler(this.displayButton_Click);
             // 
+            // albumView1
+            // 
+            this.albumView1.Location = new System.Drawing.Point(0, 0);
+            this.albumView1.Name = "albumView1";
+            this.albumView1.Size = new System.Drawing.Size(150, 150);
+            this.albumView1.TabIndex = 1;
+            // 
             // displayModeButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.albumView1);
             this.Controls.Add(this.displayButton);
             this.Name = "displayModeButton";
             this.Size = new System.Drawing.Size(42, 32);
@@ -54,5 +63,6 @@
         #endregion
 
         private System.Windows.Forms.Button displayButton;
+        private pictureThumbnail albumView1;
     }
 }

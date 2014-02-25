@@ -34,27 +34,33 @@ namespace photoViewer
          
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; // removes the titleBar
         }
-
+       
         private void _RefreshAlbumView()
         {
             albumsTable.Controls.Clear();
       
             foreach (Album a in albums)
             {
-                AlbumView view = new AlbumView();
+                //pictureThumbnail view = new pictureThumbnail();
                 Picture thumb = a.GetThumbnail();
                 
-                view.SetAlbumName("My first albim");
+                
+                /*view.SetAlbumName("My first album");
                 view.SetPicture(thumb.pictureFile);
+                */
 
-                albumsTable.Controls.Add(view);
+                albumThumbnail albumView = new albumThumbnail();
+                albumView.setName("My first album");
+                albumView.setThumbnail(thumb.pictureFile);
+
+                albumsTable.Controls.Add(albumView);
 
                 if (a.IsActive) // FIXME
                 {
                     int i = 0;
                     foreach (Picture p in a.GetPictureList())
                     {
-                        AlbumView pv = new AlbumView(); //FIXME
+                        pictureThumbnail pv = new pictureThumbnail(); //FIXME
                         pv.SetAlbumName("");
                         Console.WriteLine("Iterating... " + p.pictureFile);
                         pv.SetPicture(p.pictureFile);

@@ -10,26 +10,23 @@ using System.Windows.Forms;
 
 namespace photoViewer
 {
-    public partial class AlbumView : UserControl
+    public partial class albumThumbnail : UserControl
     {
-        public AlbumView()
+        public albumThumbnail()
         {
             InitializeComponent();
         }
 
-        public void SetAlbumName(string str)
-        {
-            this.theAlbum.Text = str;
+        public void setName(String nameToSet){
+            this.albumName.Text = nameToSet;
         }
 
-        public void SetPicture(Image img)
+        public void setThumbnail(Image imgtoSet)
         {
-            this.thumbnail.Image = img;
+            this.thumbnail.Image = imgtoSet;
         }
 
-        private void name_Click(object sender, EventArgs e)
-        {
-
-        }
     }
+
+    
 }

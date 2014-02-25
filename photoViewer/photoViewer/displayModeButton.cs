@@ -17,6 +17,7 @@ namespace photoViewer
             InitializeComponent();
         }
 
+        
         private void displayButton_Click(object sender, EventArgs e)
         {
 

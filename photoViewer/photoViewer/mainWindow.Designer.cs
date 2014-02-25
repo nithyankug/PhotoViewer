@@ -33,11 +33,6 @@
             this.closeButton = new System.Windows.Forms.Button();
             this.albumsTable = new System.Windows.Forms.TableLayoutPanel();
             this.tableImages = new System.Windows.Forms.TableLayoutPanel();
-            this.delAlbButton = new photoViewer.displayModeButton();
-            this.addAlbButton = new photoViewer.displayModeButton();
-            this.viewThreeButton = new photoViewer.displayModeButton();
-            this.viewTwoButton = new photoViewer.displayModeButton();
-            this.viewOneButton = new photoViewer.displayModeButton();
             this.SuspendLayout();
             // 
             // reduceButton
@@ -81,12 +76,13 @@
             this.albumsTable.Name = "albumsTable";
             this.albumsTable.RowCount = 1;
             this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.albumsTable.Size = new System.Drawing.Size(180, 415);
+            this.albumsTable.Size = new System.Drawing.Size(180, 437);
             this.albumsTable.TabIndex = 12;
             this.albumsTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableImages
             // 
+            this.tableImages.AllowDrop = true;
             this.tableImages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -104,64 +100,22 @@
             this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableImages.Size = new System.Drawing.Size(773, 415);
+            this.tableImages.Size = new System.Drawing.Size(773, 437);
             this.tableImages.TabIndex = 13;
-            // 
-            // delAlbButton
-            // 
-            this.delAlbButton.Location = new System.Drawing.Point(52, -6);
-            this.delAlbButton.Name = "delAlbButton";
-            this.delAlbButton.Size = new System.Drawing.Size(46, 46);
-            this.delAlbButton.TabIndex = 6;
-            // 
-            // addAlbButton
-            // 
-            this.addAlbButton.Location = new System.Drawing.Point(13, -6);
-            this.addAlbButton.Name = "addAlbButton";
-            this.addAlbButton.Size = new System.Drawing.Size(46, 46);
-            this.addAlbButton.TabIndex = 5;
-            this.addAlbButton.Load += new System.EventHandler(this.addAlbButton_Load);
-            // 
-            // viewThreeButton
-            // 
-            this.viewThreeButton.Location = new System.Drawing.Point(279, -6);
-            this.viewThreeButton.Name = "viewThreeButton";
-            this.viewThreeButton.Size = new System.Drawing.Size(46, 28);
-            this.viewThreeButton.TabIndex = 4;
-            // 
-            // viewTwoButton
-            // 
-            this.viewTwoButton.Location = new System.Drawing.Point(238, -6);
-            this.viewTwoButton.Name = "viewTwoButton";
-            this.viewTwoButton.Size = new System.Drawing.Size(46, 28);
-            this.viewTwoButton.TabIndex = 3;
-            // 
-            // viewOneButton
-            // 
-            this.viewOneButton.Location = new System.Drawing.Point(198, -6);
-            this.viewOneButton.Name = "viewOneButton";
-            this.viewOneButton.Size = new System.Drawing.Size(46, 28);
-            this.viewOneButton.TabIndex = 2;
             // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(984, 462);
+            this.ClientSize = new System.Drawing.Size(984, 484);
             this.Controls.Add(this.tableImages);
             this.Controls.Add(this.albumsTable);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.enlargeButton);
             this.Controls.Add(this.reduceButton);
-            this.Controls.Add(this.delAlbButton);
-            this.Controls.Add(this.addAlbButton);
-            this.Controls.Add(this.viewThreeButton);
-            this.Controls.Add(this.viewTwoButton);
-            this.Controls.Add(this.viewOneButton);
             this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "mainWindow";
-            this.Text = "mainWindow";
             this.Load += new System.EventHandler(this.mainWindow_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainWindow_MouseDown);
             this.ResumeLayout(false);
@@ -170,11 +124,6 @@
 
         #endregion
 
-        private displayModeButton viewOneButton;
-        private displayModeButton viewTwoButton;
-        private displayModeButton viewThreeButton;
-        private displayModeButton addAlbButton;
-        private displayModeButton delAlbButton;
         private System.Windows.Forms.Button reduceButton;
         private System.Windows.Forms.Button enlargeButton;
         private System.Windows.Forms.Button closeButton;
