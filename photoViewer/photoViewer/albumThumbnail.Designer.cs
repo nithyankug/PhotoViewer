@@ -28,10 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.thumbnail = new System.Windows.Forms.PictureBox();
             this.albumName = new System.Windows.Forms.TextBox();
+            this.thumbnail = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).BeginInit();
             this.SuspendLayout();
+            // 
+            // albumName
+            // 
+            this.albumName.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.albumName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.albumName.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.albumName.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.albumName.Location = new System.Drawing.Point(54, 15);
+            this.albumName.Name = "albumName";
+            this.albumName.ReadOnly = true;
+            this.albumName.Size = new System.Drawing.Size(113, 16);
+            this.albumName.TabIndex = 1;
+            this.albumName.TabStop = false;
+            this.albumName.Text = "AlbumName";
+            this.albumName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.albumName.TextChanged += new System.EventHandler(this.albumName_TextChanged);
             // 
             // thumbnail
             // 
@@ -42,27 +58,11 @@
             this.thumbnail.TabIndex = 0;
             this.thumbnail.TabStop = false;
             // 
-            // albumName
-            // 
-            this.albumName.BackColor = System.Drawing.SystemColors.GrayText;
-            this.albumName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.albumName.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.albumName.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.albumName.Location = new System.Drawing.Point(49, 15);
-            this.albumName.Name = "albumName";
-            this.albumName.ReadOnly = true;
-            this.albumName.Size = new System.Drawing.Size(122, 16);
-            this.albumName.TabIndex = 1;
-            this.albumName.TabStop = false;
-            this.albumName.Text = "AlbumName";
-            this.albumName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.albumName.TextChanged += new System.EventHandler(this.albumName_TextChanged);
-            // 
             // albumThumbnail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GrayText;
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.Controls.Add(this.albumName);
             this.Controls.Add(this.thumbnail);
             this.Name = "albumThumbnail";

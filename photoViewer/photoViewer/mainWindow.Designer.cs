@@ -69,17 +69,13 @@
             // 
             this.albumsTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.albumsTable.BackColor = System.Drawing.SystemColors.Window;
+            this.albumsTable.BackColor = System.Drawing.SystemColors.ControlLight;
             this.albumsTable.ColumnCount = 1;
-            this.albumsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.albumsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.albumsTable.Location = new System.Drawing.Point(12, 35);
             this.albumsTable.Name = "albumsTable";
             this.albumsTable.RowCount = 1;
-            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 437F));
-            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 437F));
-            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 437F));
-            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 437F));
+            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.albumsTable.Size = new System.Drawing.Size(180, 437);
             this.albumsTable.TabIndex = 12;
             this.albumsTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
@@ -89,7 +85,7 @@
             this.tableImages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableImages.BackColor = System.Drawing.SystemColors.Window;
+            this.tableImages.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.tableImages.ColumnCount = 6;
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());

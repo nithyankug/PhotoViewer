@@ -41,22 +41,16 @@ namespace photoViewer
       
             foreach (Album a in albums)
             {
-                //pictureThumbnail view = new pictureThumbnail();
+               
                 Picture thumb = a.GetThumbnail();
-                
-                
-                /*view.SetAlbumName("My first album");
-                view.SetPicture(thumb.pictureFile);
-                */
-
+       
                 albumThumbnail albumView = new albumThumbnail();
                 albumThumbnail albumView2 = new albumThumbnail();
-                albumView.setName("My first album");
+                albumView.setName("MY FIRST ALBUM");
                 albumView.setThumbnail(thumb.pictureFile);
 
-
                 albumsTable.Controls.Add(albumView);
-
+           
               
                 if (a.IsActive) // FIXME
                 {
