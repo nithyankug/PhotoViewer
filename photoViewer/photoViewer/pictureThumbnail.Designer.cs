@@ -1,4 +1,4 @@
-﻿    namespace photoViewer
+﻿namespace photoViewer
 {
     partial class pictureThumbnail
     {
@@ -35,8 +35,7 @@
             // 
             // thumbnail
             // 
-            this.thumbnail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.thumbnail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.thumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.thumbnail.ErrorImage = null;

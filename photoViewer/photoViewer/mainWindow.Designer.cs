@@ -36,8 +36,6 @@
             this.reduceButton = new System.Windows.Forms.Button();
             this.sizeDisplay = new System.Windows.Forms.TrackBar();
             this.addAlbumButton = new System.Windows.Forms.Button();
-            this.refresh = new System.Windows.Forms.Button();
-            this.sizeIndicator = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sizeDisplay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,12 +110,9 @@
             // 
             this.sizeDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sizeDisplay.Location = new System.Drawing.Point(824, 471);
-            this.sizeDisplay.Maximum = 3;
-            this.sizeDisplay.Minimum = 1;
             this.sizeDisplay.Name = "sizeDisplay";
             this.sizeDisplay.Size = new System.Drawing.Size(173, 45);
             this.sizeDisplay.TabIndex = 14;
-            this.sizeDisplay.Value = 1;
             this.sizeDisplay.Scroll += new System.EventHandler(this.sizeDisplay_Scroll);
             // 
             // addAlbumButton
@@ -132,37 +127,12 @@
             this.addAlbumButton.UseVisualStyleBackColor = true;
             this.addAlbumButton.Click += new System.EventHandler(this.addAlbumButton_Click);
             // 
-            // refresh
-            // 
-            this.refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refresh.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.refresh.Location = new System.Drawing.Point(150, 471);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(42, 23);
-            this.refresh.TabIndex = 16;
-            this.refresh.UseVisualStyleBackColor = true;
-            this.refresh.Click += new System.EventHandler(this.refresh_Click);
-            // 
-            // sizeIndicator
-            // 
-            this.sizeIndicator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sizeIndicator.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sizeIndicator.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.sizeIndicator.Location = new System.Drawing.Point(796, 476);
-            this.sizeIndicator.Name = "sizeIndicator";
-            this.sizeIndicator.Size = new System.Drawing.Size(34, 23);
-            this.sizeIndicator.TabIndex = 17;
-            this.sizeIndicator.Click += new System.EventHandler(this.sizeIndicator_Click);
-            // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(1008, 500);
-            this.Controls.Add(this.sizeIndicator);
-            this.Controls.Add(this.refresh);
             this.Controls.Add(this.addAlbumButton);
             this.Controls.Add(this.sizeDisplay);
             this.Controls.Add(this.tableImages);
@@ -170,7 +140,6 @@
             this.Controls.Add(this.closeWindow);
             this.Controls.Add(this.enlargeButton);
             this.Controls.Add(this.reduceButton);
-            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1000, 500);
@@ -192,8 +161,6 @@
         private System.Windows.Forms.Button reduceButton;
         private System.Windows.Forms.TrackBar sizeDisplay;
         private System.Windows.Forms.Button addAlbumButton;
-        private System.Windows.Forms.Button refresh;
-        private System.Windows.Forms.Label sizeIndicator;
     }
 }
 

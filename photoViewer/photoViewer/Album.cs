@@ -15,7 +15,7 @@ namespace photoViewer
     class Album
     {
         // internal attributes
-        public string name {get;set;}
+        private string name {get;set;}
         private string subTitle { get; set; }
         private FileInfo detailledInfo { get; set; }
         private string[] keywords{ get; set;} 
@@ -24,16 +24,10 @@ namespace photoViewer
         private Picture thumbnail {get; set;}
         public bool IsActive { get; set; }
 
-        public void setIsActive(bool stateToSet)
-        {
-            this.IsActive = stateToSet;
-        }
-
-        public Album(PictureList pictures,String name)
+        public Album(PictureList pictures)
         {
             this.Pictures = pictures;
             this.IsActive = true;
-            this.name = name;
         }
 
         public PictureList GetPictureList()

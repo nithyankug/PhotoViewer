@@ -33,7 +33,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <ApplicationIcon>logoPV.ico</ApplicationIcon>
+    <ApplicationIcon>logo_PhotoViewer2.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>photoViewer.Program</StartupObject>
@@ -131,15 +131,7 @@
     <None Include="Resources\DemoPicture_1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logoPV.ico" />
-    <None Include="Resources\time_square.jpg" />
-    <None Include="Resources\paris.jpg" />
-    <None Include="Resources\ny_taxi.jpg" />
-    <None Include="Resources\london.jpg" />
-    <None Include="Resources\india.jpg" />
-    <None Include="Resources\eiffel_tower.jpg" />
-    <None Include="Resources\dubai_skyview.jpg" />
-    <None Include="Resources\dubai_highway.jpg" />
+    <Content Include="logo_PhotoViewer2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
