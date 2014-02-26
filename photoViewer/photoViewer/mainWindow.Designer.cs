@@ -28,42 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reduceButton = new System.Windows.Forms.Button();
-            this.enlargeButton = new System.Windows.Forms.Button();
-            this.closeButton = new System.Windows.Forms.Button();
             this.albumsTable = new System.Windows.Forms.TableLayoutPanel();
             this.tableImages = new System.Windows.Forms.TableLayoutPanel();
+            this.closeWindow = new System.Windows.Forms.Button();
+            this.enlargeButton = new System.Windows.Forms.Button();
+            this.reduceButton = new System.Windows.Forms.Button();
+            this.sizeDisplay = new System.Windows.Forms.TrackBar();
+            ((System.ComponentModel.ISupportInitialize)(this.sizeDisplay)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reduceButton
-            // 
-            this.reduceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.reduceButton.Location = new System.Drawing.Point(934, -4);
-            this.reduceButton.Name = "reduceButton";
-            this.reduceButton.Size = new System.Drawing.Size(26, 23);
-            this.reduceButton.TabIndex = 7;
-            this.reduceButton.UseVisualStyleBackColor = true;
-            this.reduceButton.Click += new System.EventHandler(this.reduceButton_Click);
-            // 
-            // enlargeButton
-            // 
-            this.enlargeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.enlargeButton.Location = new System.Drawing.Point(962, -4);
-            this.enlargeButton.Name = "enlargeButton";
-            this.enlargeButton.Size = new System.Drawing.Size(26, 23);
-            this.enlargeButton.TabIndex = 8;
-            this.enlargeButton.UseVisualStyleBackColor = true;
-            this.enlargeButton.Click += new System.EventHandler(this.enlargeButton_Click);
-            // 
-            // closeButton
-            // 
-            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Location = new System.Drawing.Point(990, -4);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(26, 23);
-            this.closeButton.TabIndex = 9;
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.button3_Click);
             // 
             // albumsTable
             // 
@@ -85,8 +57,15 @@
             this.tableImages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+
+            this.tableImages.HorizontalScroll.Visible = false;
+            this.tableImages.HorizontalScroll.Enabled = false;
+            this.tableImages.VerticalScroll.Enabled = true;
+            this.tableImages.VerticalScroll.Visible = true;
+            this.tableImages.AutoScroll = true;
+            
             this.tableImages.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.tableImages.ColumnCount = 6;
+            this.tableImages.ColumnCount = 5;
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -97,36 +76,79 @@
             this.tableImages.Name = "tableImages";
             this.tableImages.RowCount = 1;
             this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableImages.Size = new System.Drawing.Size(818, 437);
+            this.tableImages.Size = new System.Drawing.Size(798, 417);
             this.tableImages.TabIndex = 1;
             this.tableImages.Paint += new System.Windows.Forms.PaintEventHandler(this.tableImages_Paint);
+            // 
+            // closeWindow
+            // 
+            this.closeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeWindow.Location = new System.Drawing.Point(970, -4);
+            this.closeWindow.Name = "closeWindow";
+            this.closeWindow.Size = new System.Drawing.Size(26, 23);
+            this.closeWindow.TabIndex = 9;
+            this.closeWindow.UseVisualStyleBackColor = true;
+            this.closeWindow.Click += new System.EventHandler(this.closeWindow_Click);
+            // 
+            // enlargeButton
+            // 
+            this.enlargeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.enlargeButton.Location = new System.Drawing.Point(942, -4);
+            this.enlargeButton.Name = "enlargeButton";
+            this.enlargeButton.Size = new System.Drawing.Size(26, 23);
+            this.enlargeButton.TabIndex = 8;
+            this.enlargeButton.UseVisualStyleBackColor = true;
+            this.enlargeButton.Click += new System.EventHandler(this.enlargeButton_Click);
+            // 
+            // reduceButton
+            // 
+            this.reduceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.reduceButton.Location = new System.Drawing.Point(914, -4);
+            this.reduceButton.Name = "reduceButton";
+            this.reduceButton.Size = new System.Drawing.Size(26, 23);
+            this.reduceButton.TabIndex = 7;
+            this.reduceButton.UseVisualStyleBackColor = true;
+            this.reduceButton.Click += new System.EventHandler(this.reduceButton_Click);
+            // 
+            // sizeDisplay
+            // 
+            this.sizeDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.sizeDisplay.Location = new System.Drawing.Point(824, 455);
+            this.sizeDisplay.Name = "sizeDisplay";
+            this.sizeDisplay.Size = new System.Drawing.Size(173, 45);
+            this.sizeDisplay.TabIndex = 14;
+            this.sizeDisplay.Scroll += new System.EventHandler(this.sizeDisplay_Scroll);
             // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(1028, 484);
+            this.ClientSize = new System.Drawing.Size(1008, 484);
+            this.Controls.Add(this.sizeDisplay);
             this.Controls.Add(this.tableImages);
             this.Controls.Add(this.albumsTable);
-            this.Controls.Add(this.closeButton);
+            this.Controls.Add(this.closeWindow);
             this.Controls.Add(this.enlargeButton);
             this.Controls.Add(this.reduceButton);
             this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "mainWindow";
             this.Load += new System.EventHandler(this.mainWindow_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainWindow_MouseDown);
+            ((System.ComponentModel.ISupportInitialize)(this.sizeDisplay)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button reduceButton;
-        private System.Windows.Forms.Button enlargeButton;
-        private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.TableLayoutPanel albumsTable;
         private System.Windows.Forms.TableLayoutPanel tableImages;
+        private System.Windows.Forms.Button closeWindow;
+        private System.Windows.Forms.Button enlargeButton;
+        private System.Windows.Forms.Button reduceButton;
+        private System.Windows.Forms.TrackBar sizeDisplay;
     }
 }
 

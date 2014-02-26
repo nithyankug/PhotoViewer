@@ -31,9 +31,13 @@ namespace photoViewer
         public mainWindow()
         {
             InitializeComponent();
-         
+           
+            
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; // removes the titleBar
+            
         }
+
+   
        
         private void _RefreshAlbumView()
         {
@@ -92,7 +96,8 @@ namespace photoViewer
             _RefreshAlbumView();
         }
 
-
+        #region DropShadow & Moveable
+        // Adds the dropshadow
         protected override CreateParams CreateParams
         {
             get
@@ -104,7 +109,18 @@ namespace photoViewer
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        // Callback functions called when form is being moved.
+        private void mainWindow_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+        }
+
+        #endregion
+
+        #region Window buttons
+
+        private void closeWindow_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -126,22 +142,16 @@ namespace photoViewer
             this.WindowState = FormWindowState.Minimized;
         }
 
+        #endregion
+
         private void albumList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void closeButton_MouseDown(object sender, MouseEventArgs e)
-        {
 
-        }
 
-        // Callback functions called when form is being moved.
-        private void mainWindow_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0); 
-        }
+        
 
         private void addAlbButton_Load(object sender, EventArgs e)
         {
@@ -155,8 +165,15 @@ namespace photoViewer
 
         private void tableImages_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void sizeDisplay_Scroll(object sender, EventArgs e)
+        {
             
         }
+
+      
 
     }
 }

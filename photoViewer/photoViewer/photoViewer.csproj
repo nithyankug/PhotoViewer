@@ -58,12 +58,6 @@
     <Compile Include="pictureThumbnail.Designer.cs">
       <DependentUpon>pictureThumbnail.cs</DependentUpon>
     </Compile>
-    <Compile Include="displayModeButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="displayModeButton.Designer.cs">
-      <DependentUpon>displayModeButton.cs</DependentUpon>
-    </Compile>
     <Compile Include="mainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,9 +77,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pictureThumbnail.resx">
       <DependentUpon>pictureThumbnail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="displayModeButton.resx">
-      <DependentUpon>displayModeButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainWindow.resx">
       <DependentUpon>mainWindow.cs</DependentUpon>
