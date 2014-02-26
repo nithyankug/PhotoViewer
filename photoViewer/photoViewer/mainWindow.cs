@@ -37,28 +37,39 @@ namespace photoViewer
        
         private void _RefreshAlbumView()
         {
+            sizeIndicatorUpdate();
             albumsTable.Controls.Clear();
-      
+            tableImages.Controls.Clear();
+
             foreach (Album a in albums)
             {
                
                 Picture thumb = a.GetThumbnail();
        
                 albumThumbnail albumView = new albumThumbnail();
-                albumThumbnail albumView2 = new albumThumbnail();
                 
+                albumView.setName(a.name);
                 albumView.setThumbnail(thumb.pictureFile);
 
                 albumsTable.Controls.Add(albumView);
-           
+               
+                if (albumView.getState())
+                {
+                    a.setIsActive(true);
+                }
               
                 if (a.IsActive) // FIXME
                 {
                     int row = 0;
                     foreach (Picture p in a.GetPictureList())
                     {
+                        int thumbnailHeight=(this.sizeDisplay.Value*150);
+                        int thumbnailWidth = (this.sizeDisplay.Value * 130);
+
+                        this.tableImages.ColumnCount = (this.tableImages.Size.Width) / (thumbnailHeight);
+
                         pictureThumbnail pv = new pictureThumbnail(); //FIXME
-                        
+                        pv.Size = new System.Drawing.Size(thumbnailHeight, thumbnailWidth);
                         int colH = (this.tableImages.Size.Height) / (pv.Size.Height);
                        
                         pv.SetAlbumName(p.get());
@@ -78,7 +89,7 @@ namespace photoViewer
         private void mainWindow_Load(object sender, EventArgs e)
         {
             /* Unarchive data (AlbumList) */
-
+            
             PictureList l, ll;
             l = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
             ll = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures));
@@ -86,7 +97,7 @@ namespace photoViewer
             l.LoadAll();
 
             albums = new AlbumList();
-            albums.Add(new Album(l));
+            albums.Add(new Album(l,"Default Album"));
             
 
             _RefreshAlbumView();
@@ -169,19 +180,41 @@ namespace photoViewer
 
         private void addAlbumButton_Click(object sender, EventArgs e)
         {
-            /* FIXING IT
+            
             addAlbumPopUp newAlbum = new addAlbumPopUp();
             String newAlbumName = "";
             newAlbum.ShowDialog();
             newAlbumName = newAlbum.getTypedName();
-
+            
+            
             PictureList emptyAlbum = new PictureList();
-            emptyAlbum = null;
-            albums.Add(new Album(emptyAlbum));
+            emptyAlbum = Picture.ExtractListFromPath("C:/Users/Nithyan KUGATHASAN/Downloads/images_PhotoViewer",false);
+            Album toSend = new Album(emptyAlbum, newAlbumName);
+            toSend.setIsActive(true);
+            albums.Add(toSend);
             _RefreshAlbumView();
-              */
+              
         }
 
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            _RefreshAlbumView();
+        }
+
+        private void sizeIndicator_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sizeIndicatorUpdate()
+        {
+            this.sizeIndicator.Text = "x "+this.sizeDisplay.Value.ToString();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
       
 
     }

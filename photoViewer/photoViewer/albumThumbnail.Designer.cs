@@ -41,7 +41,6 @@
             this.albumName.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.albumName.Location = new System.Drawing.Point(54, 15);
             this.albumName.Name = "albumName";
-            this.albumName.ReadOnly = true;
             this.albumName.Size = new System.Drawing.Size(113, 16);
             this.albumName.TabIndex = 1;
             this.albumName.TabStop = false;

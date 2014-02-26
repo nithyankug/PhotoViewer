@@ -12,6 +12,12 @@ namespace photoViewer
 {
     public partial class albumThumbnail : UserControl
     {
+        private bool isActive = false;
+        public bool getState()
+        {
+            return this.isActive;
+        }
+
         public albumThumbnail()
         {
             InitializeComponent();
@@ -30,6 +36,16 @@ namespace photoViewer
         {
 
         }
+
+        protected override void OnClick(EventArgs e)
+        {
+            base.OnClick(e);
+            this.isActive = true;
+            Console.Beep();
+            
+        }
+
+
 
     }
 
