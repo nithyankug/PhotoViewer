@@ -38,7 +38,7 @@
             // reduceButton
             // 
             this.reduceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.reduceButton.Location = new System.Drawing.Point(890, -4);
+            this.reduceButton.Location = new System.Drawing.Point(934, -4);
             this.reduceButton.Name = "reduceButton";
             this.reduceButton.Size = new System.Drawing.Size(26, 23);
             this.reduceButton.TabIndex = 7;
@@ -48,7 +48,7 @@
             // enlargeButton
             // 
             this.enlargeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.enlargeButton.Location = new System.Drawing.Point(918, -4);
+            this.enlargeButton.Location = new System.Drawing.Point(962, -4);
             this.enlargeButton.Name = "enlargeButton";
             this.enlargeButton.Size = new System.Drawing.Size(26, 23);
             this.enlargeButton.TabIndex = 8;
@@ -58,7 +58,7 @@
             // closeButton
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Location = new System.Drawing.Point(946, -4);
+            this.closeButton.Location = new System.Drawing.Point(990, -4);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(26, 23);
             this.closeButton.TabIndex = 9;
@@ -76,39 +76,41 @@
             this.albumsTable.Name = "albumsTable";
             this.albumsTable.RowCount = 1;
             this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 437F));
+            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 437F));
+            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 437F));
+            this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 437F));
             this.albumsTable.Size = new System.Drawing.Size(180, 437);
             this.albumsTable.TabIndex = 12;
             this.albumsTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableImages
             // 
-            this.tableImages.AllowDrop = true;
             this.tableImages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableImages.BackColor = System.Drawing.SystemColors.Window;
-            this.tableImages.ColumnCount = 1;
-            this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableImages.ColumnCount = 6;
+            this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableImages.Location = new System.Drawing.Point(199, 35);
             this.tableImages.Name = "tableImages";
-            this.tableImages.RowCount = 8;
-            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableImages.Size = new System.Drawing.Size(773, 437);
-            this.tableImages.TabIndex = 13;
+            this.tableImages.RowCount = 1;
+            this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableImages.Size = new System.Drawing.Size(818, 437);
+            this.tableImages.TabIndex = 1;
+            this.tableImages.Paint += new System.Windows.Forms.PaintEventHandler(this.tableImages_Paint);
             // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(984, 484);
+            this.ClientSize = new System.Drawing.Size(1028, 484);
             this.Controls.Add(this.tableImages);
             this.Controls.Add(this.albumsTable);
             this.Controls.Add(this.closeButton);

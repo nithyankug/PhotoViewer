@@ -26,6 +26,11 @@ namespace photoViewer
             this.thumbnail.Image = imgtoSet;
         }
 
+        private void albumName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 
     

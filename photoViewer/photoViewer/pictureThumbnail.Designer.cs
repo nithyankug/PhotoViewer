@@ -48,28 +48,29 @@
             // 
             // theAlbum
             // 
-            this.theAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.theAlbum.AutoSize = true;
-            this.theAlbum.Location = new System.Drawing.Point(47, 129);
+            this.theAlbum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.theAlbum.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.theAlbum.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.theAlbum.Location = new System.Drawing.Point(5, 127);
             this.theAlbum.Name = "theAlbum";
-            this.theAlbum.Size = new System.Drawing.Size(36, 13);
+            this.theAlbum.Size = new System.Drawing.Size(120, 21);
             this.theAlbum.TabIndex = 1;
             this.theAlbum.Text = "Album";
-            this.theAlbum.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.theAlbum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.theAlbum.Click += new System.EventHandler(this.name_Click);
             // 
-            // AlbumView
+            // pictureThumbnail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Controls.Add(this.theAlbum);
             this.Controls.Add(this.thumbnail);
-            this.Name = "AlbumView";
+            this.Name = "pictureThumbnail";
             this.Size = new System.Drawing.Size(130, 150);
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

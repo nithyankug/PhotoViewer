@@ -50,24 +50,34 @@ namespace photoViewer
                 */
 
                 albumThumbnail albumView = new albumThumbnail();
+                albumThumbnail albumView2 = new albumThumbnail();
                 albumView.setName("My first album");
                 albumView.setThumbnail(thumb.pictureFile);
 
+
                 albumsTable.Controls.Add(albumView);
 
+              
                 if (a.IsActive) // FIXME
                 {
-                    int i = 0;
+                    int row = 0;
                     foreach (Picture p in a.GetPictureList())
                     {
                         pictureThumbnail pv = new pictureThumbnail(); //FIXME
-                        pv.SetAlbumName("");
+                        
+                        int colH = (this.tableImages.Size.Height) / (pv.Size.Height);
+                       
+                        pv.SetAlbumName(p.get());
                         Console.WriteLine("Iterating... " + p.pictureFile);
                         pv.SetPicture(p.pictureFile);
-                        tableImages.Controls.Add(pv);
-                        tableImages.RowCount++;
+                        tableImages.Controls.Add(pv,row,0);
+                        row++;
+                       
                     }
+                   
+
                 }
+                
             }
         }
 
@@ -148,5 +158,11 @@ namespace photoViewer
         {
 
         }
+
+        private void tableImages_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
     }
 }

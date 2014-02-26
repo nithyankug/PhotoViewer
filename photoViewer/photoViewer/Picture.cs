@@ -19,7 +19,10 @@ namespace photoViewer
         private int rating { get; set; }
         private string comment { get; set; }
         private int nbInstance { get; set; }
-
+        public String get()
+        {
+            return picInfo.Name;
+        }
         public Picture(string path)
         {
             picInfo = new FileInfo(path);
@@ -88,6 +91,7 @@ namespace photoViewer
             foreach (Picture p in this)
                 p.Load();
         }
+
     }
 
 }
