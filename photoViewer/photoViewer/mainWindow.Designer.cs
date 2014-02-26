@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainWindow));
             this.albumsTable = new System.Windows.Forms.TableLayoutPanel();
             this.tableImages = new System.Windows.Forms.TableLayoutPanel();
             this.closeWindow = new System.Windows.Forms.Button();
             this.enlargeButton = new System.Windows.Forms.Button();
             this.reduceButton = new System.Windows.Forms.Button();
             this.sizeDisplay = new System.Windows.Forms.TrackBar();
+            this.addAlbumButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sizeDisplay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,11 +46,11 @@
             this.albumsTable.BackColor = System.Drawing.SystemColors.ControlLight;
             this.albumsTable.ColumnCount = 1;
             this.albumsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.albumsTable.Location = new System.Drawing.Point(12, 35);
+            this.albumsTable.Location = new System.Drawing.Point(12, 25);
             this.albumsTable.Name = "albumsTable";
             this.albumsTable.RowCount = 1;
             this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.albumsTable.Size = new System.Drawing.Size(180, 437);
+            this.albumsTable.Size = new System.Drawing.Size(180, 443);
             this.albumsTable.TabIndex = 12;
             this.albumsTable.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -57,13 +59,7 @@
             this.tableImages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-
-            this.tableImages.HorizontalScroll.Visible = false;
-            this.tableImages.HorizontalScroll.Enabled = false;
-            this.tableImages.VerticalScroll.Enabled = true;
-            this.tableImages.VerticalScroll.Visible = true;
             this.tableImages.AutoScroll = true;
-            
             this.tableImages.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.tableImages.ColumnCount = 5;
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -72,11 +68,11 @@
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableImages.Location = new System.Drawing.Point(199, 35);
+            this.tableImages.Location = new System.Drawing.Point(199, 25);
             this.tableImages.Name = "tableImages";
             this.tableImages.RowCount = 1;
             this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableImages.Size = new System.Drawing.Size(798, 417);
+            this.tableImages.Size = new System.Drawing.Size(798, 443);
             this.tableImages.TabIndex = 1;
             this.tableImages.Paint += new System.Windows.Forms.PaintEventHandler(this.tableImages_Paint);
             // 
@@ -113,24 +109,39 @@
             // sizeDisplay
             // 
             this.sizeDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sizeDisplay.Location = new System.Drawing.Point(824, 455);
+            this.sizeDisplay.Location = new System.Drawing.Point(824, 471);
             this.sizeDisplay.Name = "sizeDisplay";
             this.sizeDisplay.Size = new System.Drawing.Size(173, 45);
             this.sizeDisplay.TabIndex = 14;
             this.sizeDisplay.Scroll += new System.EventHandler(this.sizeDisplay_Scroll);
+            // 
+            // addAlbumButton
+            // 
+            this.addAlbumButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addAlbumButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addAlbumButton.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.addAlbumButton.Location = new System.Drawing.Point(12, 471);
+            this.addAlbumButton.Name = "addAlbumButton";
+            this.addAlbumButton.Size = new System.Drawing.Size(42, 23);
+            this.addAlbumButton.TabIndex = 15;
+            this.addAlbumButton.UseVisualStyleBackColor = true;
+            this.addAlbumButton.Click += new System.EventHandler(this.addAlbumButton_Click);
             // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(1008, 484);
+            this.ClientSize = new System.Drawing.Size(1008, 500);
+            this.Controls.Add(this.addAlbumButton);
             this.Controls.Add(this.sizeDisplay);
             this.Controls.Add(this.tableImages);
             this.Controls.Add(this.albumsTable);
             this.Controls.Add(this.closeWindow);
             this.Controls.Add(this.enlargeButton);
             this.Controls.Add(this.reduceButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "mainWindow";
             this.Load += new System.EventHandler(this.mainWindow_Load);
@@ -149,6 +160,7 @@
         private System.Windows.Forms.Button enlargeButton;
         private System.Windows.Forms.Button reduceButton;
         private System.Windows.Forms.TrackBar sizeDisplay;
+        private System.Windows.Forms.Button addAlbumButton;
     }
 }
 

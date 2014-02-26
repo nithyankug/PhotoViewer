@@ -30,11 +30,7 @@ namespace photoViewer
 
         public mainWindow()
         {
-            InitializeComponent();
-           
-            
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None; // removes the titleBar
-            
+            InitializeComponent();            
         }
 
    
@@ -50,7 +46,7 @@ namespace photoViewer
        
                 albumThumbnail albumView = new albumThumbnail();
                 albumThumbnail albumView2 = new albumThumbnail();
-                albumView.setName("MY FIRST ALBUM");
+                
                 albumView.setThumbnail(thumb.pictureFile);
 
                 albumsTable.Controls.Add(albumView);
@@ -151,8 +147,6 @@ namespace photoViewer
 
 
 
-        
-
         private void addAlbButton_Load(object sender, EventArgs e)
         {
 
@@ -171,6 +165,21 @@ namespace photoViewer
         private void sizeDisplay_Scroll(object sender, EventArgs e)
         {
             
+        }
+
+        private void addAlbumButton_Click(object sender, EventArgs e)
+        {
+            /* FIXING IT
+            addAlbumPopUp newAlbum = new addAlbumPopUp();
+            String newAlbumName = "";
+            newAlbum.ShowDialog();
+            newAlbumName = newAlbum.getTypedName();
+
+            PictureList emptyAlbum = new PictureList();
+            emptyAlbum = null;
+            albums.Add(new Album(emptyAlbum));
+            _RefreshAlbumView();
+              */
         }
 
       
