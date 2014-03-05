@@ -32,5 +32,12 @@ namespace photoViewer
         {
 
         }
+
+        private void thumbnail_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            detailledPhoto view = new detailledPhoto();
+            
+            view.ShowDialog();
+        }
     }
 }

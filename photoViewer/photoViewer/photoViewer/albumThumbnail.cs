@@ -14,15 +14,15 @@ namespace photoViewer
     public partial class albumThumbnail : UserControl
     {
         private bool activate = false;
-        public delegate void delegateAlbumName(String nom);
+        public delegate void delegateAlbumName();
         public event delegateAlbumName clickAlbum;
         public String name;
 
-        void print()
+        public void print()
         {
             activate = false;
             if(clickAlbum!=null)
-            clickAlbum(name);
+                clickAlbum();
 
         }
         public bool getState()
@@ -59,10 +59,8 @@ namespace photoViewer
 
         private void albumThumbnail_Click(object sender, EventArgs e)
         {
-            
             this.activate = true;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;   
         }
 
 

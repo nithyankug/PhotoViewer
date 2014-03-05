@@ -92,10 +92,13 @@ namespace photoViewer
             newAlb.IsActive = true;
             albums.Add(newAlb);
 
+            
            
             _RefreshPictureView();
             _RefreshAlbumView();
         }
+
+        
 
         #region DropShadow & Moveable
         // Adds the dropshadow
@@ -204,15 +207,15 @@ namespace photoViewer
 
                 albumView = new albumThumbnail();
                 
-               
                 albumView.setName(a.name);
                 albumView.setThumbnail(thumb.pictureFile);
                 albumView.setNbPhoto(a.GetPictureList().Count);
                 
-                //albumView.clickAlbum += new albumThumbnail.delegateAlbumName(SetActiveAlbum);
                 albumsTable.Controls.Add(albumView);
             }
         }
+
+       
 
         private void refresh_Click(object sender, EventArgs e)
         {
@@ -232,6 +235,7 @@ namespace photoViewer
             _RefreshPictureView();
         }
 
+        #region SLIDESHOW
         private void startSlideshow_Click(object sender, EventArgs e)
         {
             
@@ -267,8 +271,9 @@ namespace photoViewer
             diapo.ShowDialog();
 
         }
+        #endregion 
 
-       
+
 
 
     }

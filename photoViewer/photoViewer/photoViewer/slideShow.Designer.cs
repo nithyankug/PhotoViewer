@@ -1,4 +1,5 @@
-﻿namespace photoViewer
+﻿using System.Windows.Forms;
+namespace photoViewer
 {
     partial class slideShow
     {
@@ -201,7 +202,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.CancelButton = this.closeSlideShow;
             this.ClientSize = new System.Drawing.Size(717, 408);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.closeSlideShow);
@@ -209,10 +209,12 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "slideShow";
             this.Text = "slideShow";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.slideShow_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.closeForm);
             ((System.ComponentModel.ISupportInitialize)(this.timerInter)).EndInit();
             this.panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageSlide)).EndInit();

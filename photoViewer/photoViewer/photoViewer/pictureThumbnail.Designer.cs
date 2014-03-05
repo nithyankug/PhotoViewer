@@ -30,6 +30,7 @@
         {
             this.thumbnail = new System.Windows.Forms.PictureBox();
             this.theAlbum = new System.Windows.Forms.Label();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             this.thumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.thumbnail.TabIndex = 0;
             this.thumbnail.TabStop = false;
+            this.thumbnail.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.thumbnail_MouseDoubleClick);
             // 
             // theAlbum
             // 
@@ -63,11 +65,28 @@
             this.theAlbum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.theAlbum.Click += new System.EventHandler(this.name_Click);
             // 
+            // deleteButton
+            // 
+            this.deleteButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.deleteButton.BackgroundImage = global::photoViewer.Properties.Resources.appbar1;
+            this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.deleteButton.FlatAppearance.BorderSize = 0;
+            this.deleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.deleteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteButton.Location = new System.Drawing.Point(6, 6);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(20, 20);
+            this.deleteButton.TabIndex = 2;
+            this.deleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.deleteButton.UseVisualStyleBackColor = false;
+            // 
             // pictureThumbnail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.theAlbum);
             this.Controls.Add(this.thumbnail);
             this.Name = "pictureThumbnail";
@@ -81,6 +100,7 @@
 
         private System.Windows.Forms.PictureBox thumbnail;
         private System.Windows.Forms.Label theAlbum;
+        public System.Windows.Forms.Button deleteButton;
 
     }
 }

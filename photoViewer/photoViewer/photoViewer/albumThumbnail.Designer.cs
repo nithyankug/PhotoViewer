@@ -28,20 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.thumbnail = new System.Windows.Forms.PictureBox();
             this.albumName = new System.Windows.Forms.Label();
             this.nbPhoto = new System.Windows.Forms.Label();
+            this.deleteAlbum = new System.Windows.Forms.Button();
+            this.thumbnail = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).BeginInit();
             this.SuspendLayout();
-            // 
-            // thumbnail
-            // 
-            this.thumbnail.Location = new System.Drawing.Point(3, 2);
-            this.thumbnail.Name = "thumbnail";
-            this.thumbnail.Size = new System.Drawing.Size(45, 45);
-            this.thumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.thumbnail.TabIndex = 0;
-            this.thumbnail.TabStop = false;
             // 
             // albumName
             // 
@@ -65,11 +57,35 @@
             this.nbPhoto.Text = "label1";
             this.nbPhoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // deleteAlbum
+            // 
+            this.deleteAlbum.BackgroundImage = global::photoViewer.Properties.Resources.appbar_close;
+            this.deleteAlbum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.deleteAlbum.FlatAppearance.BorderSize = 0;
+            this.deleteAlbum.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.deleteAlbum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteAlbum.Location = new System.Drawing.Point(28, 27);
+            this.deleteAlbum.Name = "deleteAlbum";
+            this.deleteAlbum.Size = new System.Drawing.Size(20, 20);
+            this.deleteAlbum.TabIndex = 5;
+            this.deleteAlbum.UseVisualStyleBackColor = true;
+            // 
+            // thumbnail
+            // 
+            this.thumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.thumbnail.Location = new System.Drawing.Point(3, 2);
+            this.thumbnail.Name = "thumbnail";
+            this.thumbnail.Size = new System.Drawing.Size(45, 45);
+            this.thumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.thumbnail.TabIndex = 0;
+            this.thumbnail.TabStop = false;
+            // 
             // albumThumbnail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.Controls.Add(this.deleteAlbum);
             this.Controls.Add(this.nbPhoto);
             this.Controls.Add(this.albumName);
             this.Controls.Add(this.thumbnail);
@@ -86,5 +102,6 @@
         private System.Windows.Forms.PictureBox thumbnail;
         private System.Windows.Forms.Label albumName;
         private System.Windows.Forms.Label nbPhoto;
+        private System.Windows.Forms.Button deleteAlbum;
     }
 }

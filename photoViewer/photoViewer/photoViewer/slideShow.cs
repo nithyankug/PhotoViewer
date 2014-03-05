@@ -18,11 +18,13 @@ namespace photoViewer
         private bool playState;
         private int counter;
        
-
+        
         public slideShow(List<Image> receivedAlbum,String name)
         {
             InitializeComponent();
             
+            
+
             // Getting the images
             toDisplay = receivedAlbum;
             this.albumNameLabel.Text = name;
@@ -37,7 +39,8 @@ namespace photoViewer
 
             
         }
-         
+
+        
 
         public void slideshowLaunch_Tick(Object sender,EventArgs e)
         {
@@ -66,6 +69,15 @@ namespace photoViewer
         private void closeSlideShow_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        public void closeForm(Object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
 
         // Parameters at launch
@@ -126,6 +138,7 @@ namespace photoViewer
             this.pictureCounter.Text = (counter + 1).ToString();
         }
 
+
         private void next_Click(object sender, EventArgs e)
         {
             // Stop the display
@@ -145,6 +158,31 @@ namespace photoViewer
             this.pictureNameLabel.Text = toDisplay[counter].Tag.ToString();
             this.pictureCounter.Text = (counter + 1).ToString();
         }
+        
+        // Allows the control with the keys
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Right:
+                    next_Click(null, null);
+                    break;
+                case Keys.Left:
+                    previous_Click(null, null);
+                    break;
+                case Keys.Up:
+                    this.timerInter.Value++;
+                    break;
+                case Keys.Down:
+                    this.timerInter.Value--;
+                    break;
+                
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+       
         
     }
 }

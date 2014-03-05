@@ -229,5 +229,35 @@ namespace photoViewer.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap appbar1 {
+            get {
+                object obj = ResourceManager.GetObject("appbar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap appbar2 {
+            get {
+                object obj = ResourceManager.GetObject("appbar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon logoPV {
+            get {
+                object obj = ResourceManager.GetObject("logoPV", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

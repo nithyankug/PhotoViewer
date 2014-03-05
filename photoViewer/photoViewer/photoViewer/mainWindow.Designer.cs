@@ -49,15 +49,17 @@
             this.albumsTable.BackColor = System.Drawing.SystemColors.ControlLight;
             this.albumsTable.ColumnCount = 1;
             this.albumsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.albumsTable.Location = new System.Drawing.Point(12, 25);
+            this.albumsTable.Location = new System.Drawing.Point(12, 37);
             this.albumsTable.Name = "albumsTable";
             this.albumsTable.RowCount = 1;
             this.albumsTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.albumsTable.Size = new System.Drawing.Size(180, 443);
+            this.albumsTable.Size = new System.Drawing.Size(180, 465);
             this.albumsTable.TabIndex = 12;
             // 
             // tableImages
             // 
+            this.tableImages.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tableImages.AutoScroll = true;
             this.tableImages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableImages.BackColor = System.Drawing.SystemColors.WindowFrame;
@@ -68,18 +70,18 @@
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableImages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableImages.Location = new System.Drawing.Point(199, 25);
+            this.tableImages.Location = new System.Drawing.Point(199, 37);
             this.tableImages.Name = "tableImages";
             this.tableImages.RowCount = 1;
             this.tableImages.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableImages.Size = new System.Drawing.Size(798, 443);
+            this.tableImages.Size = new System.Drawing.Size(798, 465);
             this.tableImages.TabIndex = 1;
             // 
             // sizeDisplay
             // 
             this.sizeDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sizeDisplay.LargeChange = 1;
-            this.sizeDisplay.Location = new System.Drawing.Point(824, 471);
+            this.sizeDisplay.Location = new System.Drawing.Point(824, 505);
             this.sizeDisplay.Maximum = 5;
             this.sizeDisplay.Minimum = 1;
             this.sizeDisplay.Name = "sizeDisplay";
@@ -94,7 +96,7 @@
             this.sizeIndicator.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.sizeIndicator.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sizeIndicator.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.sizeIndicator.Location = new System.Drawing.Point(796, 476);
+            this.sizeIndicator.Location = new System.Drawing.Point(796, 510);
             this.sizeIndicator.Name = "sizeIndicator";
             this.sizeIndicator.Size = new System.Drawing.Size(34, 23);
             this.sizeIndicator.TabIndex = 17;
@@ -107,7 +109,7 @@
             this.startSlideshow.FlatAppearance.BorderSize = 0;
             this.startSlideshow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startSlideshow.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.startSlideshow.Location = new System.Drawing.Point(199, 468);
+            this.startSlideshow.Location = new System.Drawing.Point(199, 502);
             this.startSlideshow.Name = "startSlideshow";
             this.startSlideshow.Size = new System.Drawing.Size(30, 30);
             this.startSlideshow.TabIndex = 18;
@@ -122,7 +124,7 @@
             this.refresh.FlatAppearance.BorderSize = 0;
             this.refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refresh.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.refresh.Location = new System.Drawing.Point(161, 468);
+            this.refresh.Location = new System.Drawing.Point(161, 502);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(30, 30);
             this.refresh.TabIndex = 16;
@@ -137,7 +139,7 @@
             this.addAlbumButton.FlatAppearance.BorderSize = 0;
             this.addAlbumButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addAlbumButton.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.addAlbumButton.Location = new System.Drawing.Point(11, 468);
+            this.addAlbumButton.Location = new System.Drawing.Point(11, 502);
             this.addAlbumButton.Name = "addAlbumButton";
             this.addAlbumButton.Size = new System.Drawing.Size(30, 30);
             this.addAlbumButton.TabIndex = 15;
@@ -153,7 +155,7 @@
             this.closeWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeWindow.Location = new System.Drawing.Point(970, -2);
             this.closeWindow.Name = "closeWindow";
-            this.closeWindow.Size = new System.Drawing.Size(25, 25);
+            this.closeWindow.Size = new System.Drawing.Size(35, 35);
             this.closeWindow.TabIndex = 9;
             this.closeWindow.UseVisualStyleBackColor = true;
             this.closeWindow.Click += new System.EventHandler(this.closeWindow_Click);
@@ -165,9 +167,9 @@
             this.enlargeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.enlargeButton.FlatAppearance.BorderSize = 0;
             this.enlargeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.enlargeButton.Location = new System.Drawing.Point(944, -3);
+            this.enlargeButton.Location = new System.Drawing.Point(932, -3);
             this.enlargeButton.Name = "enlargeButton";
-            this.enlargeButton.Size = new System.Drawing.Size(25, 25);
+            this.enlargeButton.Size = new System.Drawing.Size(35, 35);
             this.enlargeButton.TabIndex = 8;
             this.enlargeButton.UseVisualStyleBackColor = true;
             this.enlargeButton.Click += new System.EventHandler(this.enlargeButton_Click);
@@ -181,9 +183,9 @@
             this.reduceButton.FlatAppearance.BorderSize = 0;
             this.reduceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reduceButton.ForeColor = System.Drawing.Color.Transparent;
-            this.reduceButton.Location = new System.Drawing.Point(914, -4);
+            this.reduceButton.Location = new System.Drawing.Point(893, -4);
             this.reduceButton.Name = "reduceButton";
-            this.reduceButton.Size = new System.Drawing.Size(25, 25);
+            this.reduceButton.Size = new System.Drawing.Size(35, 35);
             this.reduceButton.TabIndex = 7;
             this.reduceButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.reduceButton.UseVisualStyleBackColor = false;
@@ -194,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(1008, 500);
+            this.ClientSize = new System.Drawing.Size(1008, 534);
             this.Controls.Add(this.startSlideshow);
             this.Controls.Add(this.sizeIndicator);
             this.Controls.Add(this.refresh);
