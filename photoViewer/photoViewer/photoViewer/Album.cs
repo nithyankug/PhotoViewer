@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace photoViewer
 {
-    class AlbumList : List<Album>
+    public class AlbumList : List<Album>
     {
     }
 
-    class Album
+    public class Album
     {
         // internal attributes
         public string name { get; set; }
@@ -20,7 +20,7 @@ namespace photoViewer
         private FileInfo detailledInfo { get; set; }
         private string[] keywords { get; set; }
         private Image coverPicture { get; set; }
-        private PictureList Pictures { get; set; }
+        private PictureList Pictures;
         private Picture thumbnail { get; set; }
         public bool IsActive { get; set; }
 
@@ -42,7 +42,7 @@ namespace photoViewer
 
         public PictureList GetPictureList()
         {
-            return Pictures;
+            return this.Pictures;
         }
 
         public Picture GetThumbnail()

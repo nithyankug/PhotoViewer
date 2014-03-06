@@ -11,6 +11,8 @@ using System.Resources;
 using System.Runtime.InteropServices;
 using System.Drawing.Text;
 using System.IO;
+using System.Reflection;
+using System.Diagnostics;
 
 namespace photoViewer
 {
@@ -29,11 +31,13 @@ namespace photoViewer
 
         private AlbumList albums;
         private albumThumbnail albumView;
-       
+        private Picture big;
 
         public mainWindow()
         {
+
             InitializeComponent();
+
         }
 
 
@@ -42,7 +46,7 @@ namespace photoViewer
         {
             sizeIndicatorUpdate();
             tableImages.Controls.Clear();
-           
+
             foreach (Album a in albums)
             {
                 if (a.IsActive) // FIXME
@@ -52,21 +56,21 @@ namespace photoViewer
                     {
 
                         this.tableImages.ColumnCount = this.sizeDisplay.Value;
-                        
+                        big = p;
                         int thumbnailHeight = ((this.tableImages.Size.Width) / (this.sizeDisplay.Value));
                         int thumbnailWidth = (thumbnailHeight * 80 / 100);
-                        
-                        pictureThumbnail pictureThumb = new pictureThumbnail(); //FIXME
-                        
-                        pictureThumb.Size = new System.Drawing.Size(thumbnailHeight, thumbnailWidth);
 
-                        pictureThumb.SetThumbName(p.get());
-                        pictureThumb.SetPicture(p.pictureFile);
-                        
+                        pictureThumbnail pictureThumb = new pictureThumbnail(); //FIXME
+
+                        pictureThumb.Size = new System.Drawing.Size(thumbnailHeight, thumbnailWidth);
+                        pictureThumb.photo = p;
+                        pictureThumb.SetThumbName();
+                        pictureThumb.SetPicture();
+
 
                         tableImages.Controls.Add(pictureThumb, row, 0);
                         row++;
-                       
+
                     }
                 }
             }
@@ -92,13 +96,12 @@ namespace photoViewer
             newAlb.IsActive = true;
             albums.Add(newAlb);
 
-            
-           
+
             _RefreshPictureView();
             _RefreshAlbumView();
         }
 
-        
+
 
         #region DropShadow & Moveable
         // Adds the dropshadow
@@ -177,7 +180,7 @@ namespace photoViewer
             // PopUp that will require the user to define the album
             albumPopup addAlbum = new albumPopup();
             addAlbum.ShowDialog();
-            
+
             // Given the path defined load pictures
             if (addAlbum.AlbumValid)
             {
@@ -194,7 +197,7 @@ namespace photoViewer
             _RefreshPictureView();
             _RefreshAlbumView();
 
-            
+
         }
 
         private void _RefreshAlbumView()
@@ -206,16 +209,23 @@ namespace photoViewer
                 Picture thumb = a.GetThumbnail();
 
                 albumView = new albumThumbnail();
-                
+
                 albumView.setName(a.name);
                 albumView.setThumbnail(thumb.pictureFile);
                 albumView.setNbPhoto(a.GetPictureList().Count);
-                
+                albumView.Click += new EventHandler(activateAlbum);
                 albumsTable.Controls.Add(albumView);
+
             }
         }
 
-       
+        public void activateAlbum(object sender, EventArgs e)
+        {
+            MessageBox.Show("Clicked");
+
+
+        }
+
 
         private void refresh_Click(object sender, EventArgs e)
         {
@@ -238,9 +248,9 @@ namespace photoViewer
         #region SLIDESHOW
         private void startSlideshow_Click(object sender, EventArgs e)
         {
-            
+
             List<Image> toSend = new List<Image>();
-            String nameOfAlbum="";
+            String nameOfAlbum = "";
             FileInfo nameOfPicture = null;
             Image imgToSend;
 
@@ -255,24 +265,87 @@ namespace photoViewer
                         imgToSend = b.pictureFile;
 
                         // We bind the name for the later display
-                        nameOfPicture=b.picInfo;
+                        nameOfPicture = b.picInfo;
                         imgToSend.Tag = nameOfPicture.Name;
 
                         // Adding to the list
                         toSend.Add(imgToSend);
-                        
+
                     }
-                    nameOfAlbum=a.name;
+                    nameOfAlbum = a.name;
                 }
             }
 
             // Launching the slideshow
-            slideShow diapo = new slideShow(toSend,nameOfAlbum);
+            slideShow diapo = new slideShow(toSend, nameOfAlbum);
             diapo.ShowDialog();
 
         }
-        #endregion 
+        #endregion
 
+        #region WEBPAGE
+        private void webView_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamWriter webPageGen = new StreamWriter(Assembly.GetExecutingAssembly().Location + "album.html");
+                String picturePath;
+                String albumName;
+
+                
+                // Looping to find the active Album
+                foreach (Album a in albums)
+                {
+                    if (a.IsActive)
+                    {
+                        int j = 0;
+                        albumName = a.name;
+
+                        // Header of the HTML file.
+                        webPageGen.WriteLine("<html>\n<head>\n<title>"+albumName+"</title>\n</head>\n<body Bgcolor=\"#333333\"><p align=\"center\">\n<b><u><div align=\"center\"><center>\n <br>	<table border=\"0\" cellpadding=\"3\" cellspacing=\"10\" width=\"600\">");
+
+                        // Opens a row
+                        webPageGen.WriteLine("<tr>");
+                        foreach (Picture p in a.GetPictureList())
+                        {
+                            // Get the picture path
+                            picturePath = p.picInfo.FullName;
+                            
+                            // Center and display a picture
+                            webPageGen.WriteLine("<td width=\"120\" align=\"center\">\n<img border=\"0\" src=\" " + picturePath + "\" align=\"center\" width=120 height=120></a></td>");
+                            j++;
+
+                            // 4 pictures per row
+                            if (j % 4 == 0)
+                            {
+                                webPageGen.WriteLine("</tr>");
+                                webPageGen.WriteLine("<tr>");
+                            }
+
+                        }
+
+
+
+                    }
+                    // Closing header
+                    webPageGen.WriteLine("</center>\n</div>\n\n</body>\n</html>");
+                    webPageGen.Close();
+
+                }
+
+                // Launching a process to open the html File generated
+                Process showWebPage = new Process();
+                showWebPage.StartInfo.FileName = Assembly.GetExecutingAssembly().Location + "album.html";
+                showWebPage.Start();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+        #endregion
 
 
 

@@ -1,6 +1,6 @@
 ﻿namespace photoViewer
 {
-    partial class detailledPhoto
+    partial class detailPhoto
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.photoView = new System.Windows.Forms.PictureBox();
+            this.closeView = new System.Windows.Forms.Button();
             this.commentLabel = new System.Windows.Forms.Label();
             this.fieldComment = new System.Windows.Forms.TextBox();
             this.dateLabel = new System.Windows.Forms.Label();
@@ -39,8 +40,7 @@
             this.categoryLabel = new System.Windows.Forms.Label();
             this.fieldCatergory = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.fileName = new System.Windows.Forms.TextBox();
-            this.closeView = new System.Windows.Forms.Button();
+            this.fieldName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -51,7 +51,6 @@
             // splitContainer
             // 
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer.Location = new System.Drawing.Point(0, 0);
             this.splitContainer.Name = "splitContainer";
             // 
@@ -71,19 +70,39 @@
             this.splitContainer.Panel2.Controls.Add(this.categoryLabel);
             this.splitContainer.Panel2.Controls.Add(this.fieldCatergory);
             this.splitContainer.Panel2.Controls.Add(this.nameLabel);
-            this.splitContainer.Panel2.Controls.Add(this.fileName);
+            this.splitContainer.Panel2.Controls.Add(this.fieldName);
+            this.splitContainer.Panel2MinSize = 5;
             this.splitContainer.Size = new System.Drawing.Size(784, 401);
-            this.splitContainer.SplitterDistance = 508;
+            this.splitContainer.SplitterDistance = 490;
             this.splitContainer.TabIndex = 0;
             // 
             // photoView
             // 
+            this.photoView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.photoView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.photoView.Location = new System.Drawing.Point(3, 12);
             this.photoView.Name = "photoView";
-            this.photoView.Size = new System.Drawing.Size(505, 377);
+            this.photoView.Size = new System.Drawing.Size(487, 377);
             this.photoView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.photoView.TabIndex = 0;
             this.photoView.TabStop = false;
+            // 
+            // closeView
+            // 
+            this.closeView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeView.BackgroundImage = global::photoViewer.Properties.Resources.appbar_close;
+            this.closeView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.closeView.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.closeView.FlatAppearance.BorderSize = 0;
+            this.closeView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeView.Location = new System.Drawing.Point(247, 6);
+            this.closeView.Name = "closeView";
+            this.closeView.Size = new System.Drawing.Size(35, 35);
+            this.closeView.TabIndex = 10;
+            this.closeView.UseVisualStyleBackColor = true;
+            this.closeView.Click += new System.EventHandler(this.closeView_Click);
             // 
             // commentLabel
             // 
@@ -99,6 +118,7 @@
             // 
             // fieldComment
             // 
+            this.fieldComment.AcceptsReturn = true;
             this.fieldComment.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.fieldComment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fieldComment.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -194,34 +214,19 @@
             this.nameLabel.Text = "Name";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // fileName
+            // fieldName
             // 
-            this.fileName.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.fileName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.fileName.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fileName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.fileName.Location = new System.Drawing.Point(85, 52);
-            this.fileName.Name = "fileName";
-            this.fileName.Size = new System.Drawing.Size(162, 15);
-            this.fileName.TabIndex = 0;
-            this.fileName.Text = "basicText";
+            this.fieldName.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.fieldName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.fieldName.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fieldName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.fieldName.Location = new System.Drawing.Point(85, 52);
+            this.fieldName.Name = "fieldName";
+            this.fieldName.Size = new System.Drawing.Size(162, 15);
+            this.fieldName.TabIndex = 0;
+            this.fieldName.Text = "basicText";
             // 
-            // closeView
-            // 
-            this.closeView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeView.BackgroundImage = global::photoViewer.Properties.Resources.appbar_close;
-            this.closeView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.closeView.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.closeView.FlatAppearance.BorderSize = 0;
-            this.closeView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeView.Location = new System.Drawing.Point(229, 6);
-            this.closeView.Name = "closeView";
-            this.closeView.Size = new System.Drawing.Size(35, 35);
-            this.closeView.TabIndex = 10;
-            this.closeView.UseVisualStyleBackColor = true;
-            this.closeView.Click += new System.EventHandler(this.closeView_Click);
-            // 
-            // detailledPhoto
+            // detailPhoto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -230,7 +235,7 @@
             this.Controls.Add(this.splitContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = global::photoViewer.Properties.Resources.logoPV;
-            this.Name = "detailledPhoto";
+            this.Name = "detailPhoto";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "detailledPhoto";
@@ -247,17 +252,17 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer;
-        private System.Windows.Forms.PictureBox photoView;
         private System.Windows.Forms.Label commentLabel;
-        private System.Windows.Forms.TextBox fieldComment;
         private System.Windows.Forms.Label dateLabel;
-        private System.Windows.Forms.TextBox fieldDate;
         private System.Windows.Forms.Label ratingLabel;
-        private System.Windows.Forms.TextBox fieldRating;
         private System.Windows.Forms.Label categoryLabel;
-        private System.Windows.Forms.TextBox fieldCatergory;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.TextBox fileName;
         private System.Windows.Forms.Button closeView;
+        public System.Windows.Forms.PictureBox photoView;
+        public System.Windows.Forms.TextBox fieldComment;
+        public System.Windows.Forms.TextBox fieldDate;
+        public System.Windows.Forms.TextBox fieldRating;
+        public System.Windows.Forms.TextBox fieldCatergory;
+        public System.Windows.Forms.TextBox fieldName;
     }
 }

@@ -143,6 +143,16 @@ namespace photoViewer.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap appbar_globe_wire {
+            get {
+                object obj = ResourceManager.GetObject("appbar.globe.wire", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap appbar_image {
             get {
                 object obj = ResourceManager.GetObject("appbar.image", resourceCulture);
@@ -206,6 +216,16 @@ namespace photoViewer.Properties {
         internal static System.Drawing.Bitmap appbar_section_expand {
             get {
                 object obj = ResourceManager.GetObject("appbar_section_expand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap appbar_star_add {
+            get {
+                object obj = ResourceManager.GetObject("appbar.star.add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

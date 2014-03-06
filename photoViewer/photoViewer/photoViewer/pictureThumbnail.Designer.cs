@@ -67,8 +67,8 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.deleteButton.BackgroundImage = global::photoViewer.Properties.Resources.appbar1;
+            this.deleteButton.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.deleteButton.BackgroundImage = global::photoViewer.Properties.Resources.appbar_close;
             this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.deleteButton.FlatAppearance.BorderSize = 0;
             this.deleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
@@ -85,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.theAlbum);
             this.Controls.Add(this.thumbnail);

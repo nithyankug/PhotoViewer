@@ -124,11 +124,11 @@
   <data name="appbar.image.beach" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.image.beach.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appbar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appbar.close1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="appbar_section_collapse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.section.collapse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appbar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.close.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="appbar.chevron.right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.chevron.right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,32 +139,41 @@
   <data name="appbar.close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appbar.chevron.left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appbar.chevron.left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="appbar.check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="appbar.add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appbar.control.play" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appbar.control.play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="appbar.camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="appbar.refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appbar_section_expand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appbar.section.expand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="appbar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.close1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="appbar.window.minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.window.minimize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="appbar_section_expand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.section.expand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appbar.chevron.left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.chevron.left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoPV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoPV.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="appbar.monitor.play" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.monitor.play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appbar.camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appbar.camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="appbar.control.play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.control.play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="appbar.star.add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.star.add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="appbar.window.maximize" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.window.maximize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,10 +181,7 @@
   <data name="appbar.image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\appbar.image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="appbar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\appbar.close.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logoPV" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoPV.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="appbar.globe.wire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appbar.globe.wire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -15,16 +15,10 @@ namespace photoViewer
     {
         private bool activate = false;
         public delegate void delegateAlbumName();
-        public event delegateAlbumName clickAlbum;
+        public event delegateAlbumName clickedAlbum;
         public String name;
 
-        public void print()
-        {
-            activate = false;
-            if(clickAlbum!=null)
-                clickAlbum();
-
-        }
+       
         public bool getState()
         {
             return this.activate;
@@ -49,11 +43,6 @@ namespace photoViewer
         public void setNbPhoto(int nb)
         {
             this.nbPhoto.Text = nb.ToString();
-        }
-
-        private void albumName_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
 

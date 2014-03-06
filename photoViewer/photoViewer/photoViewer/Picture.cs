@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace photoViewer
 { 
-    class Picture
+    public class Picture
     {
         // internal attributes
         public FileInfo picInfo { get; set; }
         public Image pictureFile { get; set; }
-        private string category { get; set; }
-        private int rating { get; set; }
-        private string comment { get; set; }
+        public string category { get; set; }
+        public int rating { get; set; }
+        public string comment { get; set; }
         private int nbInstance { get; set; }
-        public String get()
-        {
-            return picInfo.Name;
-        }
+       
         public Picture(string path)
         {
             picInfo = new FileInfo(path);
@@ -78,7 +75,7 @@ namespace photoViewer
 
     }
 
-    class PictureList : List<Picture>
+    public class PictureList : List<Picture>
     {
         public void ExtendWithList(PictureList extend)
         {

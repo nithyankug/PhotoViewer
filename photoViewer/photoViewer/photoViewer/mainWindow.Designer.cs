@@ -39,6 +39,7 @@
             this.closeWindow = new System.Windows.Forms.Button();
             this.enlargeButton = new System.Windows.Forms.Button();
             this.reduceButton = new System.Windows.Forms.Button();
+            this.webView = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sizeDisplay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,7 +110,7 @@
             this.startSlideshow.FlatAppearance.BorderSize = 0;
             this.startSlideshow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startSlideshow.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.startSlideshow.Location = new System.Drawing.Point(199, 502);
+            this.startSlideshow.Location = new System.Drawing.Point(238, 502);
             this.startSlideshow.Name = "startSlideshow";
             this.startSlideshow.Size = new System.Drawing.Size(30, 30);
             this.startSlideshow.TabIndex = 18;
@@ -124,7 +125,7 @@
             this.refresh.FlatAppearance.BorderSize = 0;
             this.refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refresh.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.refresh.Location = new System.Drawing.Point(161, 502);
+            this.refresh.Location = new System.Drawing.Point(200, 502);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(30, 30);
             this.refresh.TabIndex = 16;
@@ -191,12 +192,28 @@
             this.reduceButton.UseVisualStyleBackColor = false;
             this.reduceButton.Click += new System.EventHandler(this.reduceButton_Click);
             // 
+            // webView
+            // 
+            this.webView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.webView.BackgroundImage = global::photoViewer.Properties.Resources.appbar_globe_wire;
+            this.webView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.webView.FlatAppearance.BorderSize = 0;
+            this.webView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.webView.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.webView.Location = new System.Drawing.Point(274, 502);
+            this.webView.Name = "webView";
+            this.webView.Size = new System.Drawing.Size(30, 30);
+            this.webView.TabIndex = 19;
+            this.webView.UseVisualStyleBackColor = true;
+            this.webView.Click += new System.EventHandler(this.webView_Click);
+            // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(1008, 534);
+            this.Controls.Add(this.webView);
             this.Controls.Add(this.startSlideshow);
             this.Controls.Add(this.sizeIndicator);
             this.Controls.Add(this.refresh);
@@ -232,5 +249,6 @@
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.Label sizeIndicator;
         private System.Windows.Forms.Button startSlideshow;
+        private System.Windows.Forms.Button webView;
     }
 }

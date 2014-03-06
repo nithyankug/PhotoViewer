@@ -12,19 +12,24 @@ namespace photoViewer
 {
     public partial class pictureThumbnail : UserControl
     {
+        public Picture photo = null;
+       
+
         public pictureThumbnail()
         {
             InitializeComponent();
         }
 
-        public void SetThumbName(string str)
+        public void SetThumbName()
         {
-            this.theAlbum.Text = str;
+            if (photo != null)
+            this.theAlbum.Text = this.photo.picInfo.Name;
         }
 
-        public void SetPicture(Image img)
+        public void SetPicture()
         {
-            this.thumbnail.BackgroundImage = img;
+            if(photo!=null)
+            this.thumbnail.BackgroundImage = this.photo.pictureFile;
            
         }
 
@@ -35,9 +40,15 @@ namespace photoViewer
 
         private void thumbnail_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            detailledPhoto view = new detailledPhoto();
-            
+            detailPhoto view = new detailPhoto();
+            view.shownPicture = this.photo;
+            view.configuration();
             view.ShowDialog();
+
+            if (view.shownPicture.picInfo.Name != view.fieldName.Text)
+            {
+
+            }
         }
     }
 }
