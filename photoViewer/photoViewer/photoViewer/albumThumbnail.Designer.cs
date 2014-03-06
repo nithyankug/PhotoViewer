@@ -102,6 +102,6 @@
         private System.Windows.Forms.PictureBox thumbnail;
         private System.Windows.Forms.Label albumName;
         private System.Windows.Forms.Label nbPhoto;
-        private System.Windows.Forms.Button deleteAlbum;
+        public System.Windows.Forms.Button deleteAlbum;
     }
 }

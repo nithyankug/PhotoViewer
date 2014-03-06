@@ -83,6 +83,7 @@ namespace photoViewer
         // Parameters at launch
         private void slideShow_Load(object sender, EventArgs e)
         {
+            
             // Initialization of the labels
             this.pictureNameLabel.Text = toDisplay[counter].Tag.ToString();
             this.pictureCounter.Text = (counter + 1).ToString();

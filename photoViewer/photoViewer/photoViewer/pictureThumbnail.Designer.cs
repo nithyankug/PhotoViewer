@@ -28,28 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.thumbnail = new System.Windows.Forms.PictureBox();
             this.theAlbum = new System.Windows.Forms.Label();
+            this.photoView = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).BeginInit();
             this.SuspendLayout();
-            // 
-            // thumbnail
-            // 
-            this.thumbnail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.thumbnail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.thumbnail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.thumbnail.ErrorImage = null;
-            this.thumbnail.InitialImage = null;
-            this.thumbnail.Location = new System.Drawing.Point(5, 5);
-            this.thumbnail.Name = "thumbnail";
-            this.thumbnail.Size = new System.Drawing.Size(140, 100);
-            this.thumbnail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.thumbnail.TabIndex = 0;
-            this.thumbnail.TabStop = false;
-            this.thumbnail.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.thumbnail_MouseDoubleClick);
             // 
             // theAlbum
             // 
@@ -65,6 +47,21 @@
             this.theAlbum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.theAlbum.Click += new System.EventHandler(this.name_Click);
             // 
+            // photoView
+            // 
+            this.photoView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.photoView.BackColor = System.Drawing.Color.Transparent;
+            this.photoView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.photoView.FlatAppearance.BorderSize = 0;
+            this.photoView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.photoView.Location = new System.Drawing.Point(5, 5);
+            this.photoView.Name = "photoView";
+            this.photoView.Size = new System.Drawing.Size(140, 100);
+            this.photoView.TabIndex = 3;
+            this.photoView.UseVisualStyleBackColor = false;
+            // 
             // deleteButton
             // 
             this.deleteButton.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -74,10 +71,10 @@
             this.deleteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.deleteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteButton.Location = new System.Drawing.Point(6, 6);
+            this.deleteButton.Location = new System.Drawing.Point(7, 7);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(20, 20);
-            this.deleteButton.TabIndex = 2;
+            this.deleteButton.TabIndex = 4;
             this.deleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.deleteButton.UseVisualStyleBackColor = false;
             // 
@@ -87,19 +84,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.photoView);
             this.Controls.Add(this.theAlbum);
-            this.Controls.Add(this.thumbnail);
             this.Name = "pictureThumbnail";
             this.Size = new System.Drawing.Size(150, 130);
-            ((System.ComponentModel.ISupportInitialize)(this.thumbnail)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox thumbnail;
         private System.Windows.Forms.Label theAlbum;
+        public System.Windows.Forms.Button photoView;
         public System.Windows.Forms.Button deleteButton;
 
     }

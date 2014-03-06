@@ -13,7 +13,7 @@ namespace photoViewer
     public partial class pictureThumbnail : UserControl
     {
         public Picture photo = null;
-       
+        public int clicked = 0;
 
         public pictureThumbnail()
         {
@@ -29,7 +29,7 @@ namespace photoViewer
         public void SetPicture()
         {
             if(photo!=null)
-            this.thumbnail.BackgroundImage = this.photo.pictureFile;
+            this.photoView.BackgroundImage = this.photo.pictureFile;
            
         }
 
@@ -38,17 +38,11 @@ namespace photoViewer
 
         }
 
-        private void thumbnail_MouseDoubleClick(object sender, MouseEventArgs e)
+       
+
+        private void deleteButton_Click(object sender, EventArgs e)
         {
-            detailPhoto view = new detailPhoto();
-            view.shownPicture = this.photo;
-            view.configuration();
-            view.ShowDialog();
 
-            if (view.shownPicture.picInfo.Name != view.fieldName.Text)
-            {
-
-            }
         }
     }
 }

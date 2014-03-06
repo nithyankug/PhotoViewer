@@ -40,7 +40,7 @@
             this.categoryLabel = new System.Windows.Forms.Label();
             this.fieldCatergory = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.fieldName = new System.Windows.Forms.TextBox();
+            this.fieldName = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -60,6 +60,7 @@
             // 
             // splitContainer.Panel2
             // 
+            this.splitContainer.Panel2.Controls.Add(this.fieldName);
             this.splitContainer.Panel2.Controls.Add(this.closeView);
             this.splitContainer.Panel2.Controls.Add(this.commentLabel);
             this.splitContainer.Panel2.Controls.Add(this.fieldComment);
@@ -70,7 +71,6 @@
             this.splitContainer.Panel2.Controls.Add(this.categoryLabel);
             this.splitContainer.Panel2.Controls.Add(this.fieldCatergory);
             this.splitContainer.Panel2.Controls.Add(this.nameLabel);
-            this.splitContainer.Panel2.Controls.Add(this.fieldName);
             this.splitContainer.Panel2MinSize = 5;
             this.splitContainer.Size = new System.Drawing.Size(784, 401);
             this.splitContainer.SplitterDistance = 490;
@@ -217,14 +217,10 @@
             // fieldName
             // 
             this.fieldName.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.fieldName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.fieldName.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fieldName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.fieldName.Location = new System.Drawing.Point(85, 52);
+            this.fieldName.Location = new System.Drawing.Point(84, 46);
             this.fieldName.Name = "fieldName";
-            this.fieldName.Size = new System.Drawing.Size(162, 15);
-            this.fieldName.TabIndex = 0;
-            this.fieldName.Text = "basicText";
+            this.fieldName.Size = new System.Drawing.Size(162, 20);
+            this.fieldName.TabIndex = 11;
             // 
             // detailPhoto
             // 
@@ -263,6 +259,6 @@
         public System.Windows.Forms.TextBox fieldDate;
         public System.Windows.Forms.TextBox fieldRating;
         public System.Windows.Forms.TextBox fieldCatergory;
-        public System.Windows.Forms.TextBox fieldName;
+        private System.Windows.Forms.MaskedTextBox fieldName;
     }
 }

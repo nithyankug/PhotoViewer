@@ -32,6 +32,7 @@ namespace photoViewer
         private AlbumList albums;
         private albumThumbnail albumView;
         private Picture big;
+        private int Click;
 
         public mainWindow()
         {
@@ -61,7 +62,8 @@ namespace photoViewer
                         int thumbnailWidth = (thumbnailHeight * 80 / 100);
 
                         pictureThumbnail pictureThumb = new pictureThumbnail(); //FIXME
-
+                        pictureThumb.photoView.MouseClick += new MouseEventHandler((sender, e) => detailedView(sender, e, p));
+                        pictureThumb.deleteButton.Click += new EventHandler((sender, e) => deletePicture(sender, e, p));
                         pictureThumb.Size = new System.Drawing.Size(thumbnailHeight, thumbnailWidth);
                         pictureThumb.photo = p;
                         pictureThumb.SetThumbName();
@@ -76,6 +78,53 @@ namespace photoViewer
             }
         }
 
+        public void detailedView(object sender, EventArgs e, Picture p)
+        {
+            /*
+            detailPhoto view = new detailPhoto();
+            view.shownPicture = p;
+            view.configuration();
+            view.ShowDialog();
+            deletePicture(null,null,p);
+            Picture toSet = p;
+            
+
+            foreach (Album alb in albums)
+            {
+                
+                    if (view.fieldName.Text.CompareTo(p.picInfo.Name) != 0
+                        || view.fieldCatergory.Text.CompareTo(p.category)!=0
+                        || view.fieldComment.Text.CompareTo(p.comment)!=0
+                        || view.fieldRating.Text.CompareTo(p.rating)!=0)
+
+                    {
+                        foreach (Picture pic in alb.GetPictureList())
+                        {
+                            
+                        }
+                    }
+                
+            }
+
+       */
+
+        }
+
+        public void deletePicture(object sender, EventArgs e, Picture p)
+        {
+            foreach (Album alb in albums)
+            {
+                if (alb.IsActive)
+                {
+                    alb.GetPictureList().Remove(p);
+                }
+
+            }
+
+            // Refresh the display
+            _RefreshPictureView();
+            _RefreshAlbumView();
+        }
         protected void albumsTable_Click()
         {
 
@@ -213,17 +262,49 @@ namespace photoViewer
                 albumView.setName(a.name);
                 albumView.setThumbnail(thumb.pictureFile);
                 albumView.setNbPhoto(a.GetPictureList().Count);
-                albumView.Click += new EventHandler(activateAlbum);
+                albumView.Click += new EventHandler((sender, e) => activateAlbum(sender, e, a.name));
+                albumView.deleteAlbum.Click += new EventHandler((sender, e) => deleteAlbum(sender, e, a.name));
                 albumsTable.Controls.Add(albumView);
 
             }
         }
 
-        public void activateAlbum(object sender, EventArgs e)
+        private void deleteAlbum(object sender, EventArgs e, string p)
         {
-            MessageBox.Show("Clicked");
+            Album toBedeleted = new Album();
 
+            foreach (Album alb in albums)
+            {
+                if (alb.name.CompareTo(p) == 0)
+                {
+                    toBedeleted = alb;
+                }
+            }
+            // Delete the wanted album
+            albums.Remove(toBedeleted);
 
+            // Refresh all views
+            _RefreshAlbumView();
+            _RefreshPictureView();
+
+        }
+
+        public void activateAlbum(object sender, EventArgs e, String a)
+        {
+            // Set the clicked album to true
+            foreach (Album alb in albums)
+            {
+                alb.IsActive = false;
+   
+                if (alb.name.CompareTo(a) == 0)
+                {
+                    alb.IsActive = true;
+                }
+            }
+
+            // Refresh the view
+            _RefreshAlbumView();
+            _RefreshPictureView();
         }
 
 
@@ -248,37 +329,40 @@ namespace photoViewer
         #region SLIDESHOW
         private void startSlideshow_Click(object sender, EventArgs e)
         {
-
-            List<Image> toSend = new List<Image>();
-            String nameOfAlbum = "";
-            FileInfo nameOfPicture = null;
-            Image imgToSend;
-
-            // We send an List<Image> it is far enough for the slideshow purpose
-            foreach (Album a in albums)
+            if (albums.Count > 0)
             {
-                if (a.IsActive)
+                List<Image> toSend = new List<Image>();
+                String nameOfAlbum = "";
+                FileInfo nameOfPicture = null;
+                Image imgToSend;
+
+                // We send an List<Image> it is far enough for the slideshow purpose
+                foreach (Album a in albums)
                 {
-                    foreach (Picture b in a.GetPictureList())
+                    if (a.IsActive)
                     {
-                        // Get the Image from our own made class Picture
-                        imgToSend = b.pictureFile;
+                        foreach (Picture b in a.GetPictureList())
+                        {
+                            // Get the Image from our own made class Picture
+                            imgToSend = b.pictureFile;
 
-                        // We bind the name for the later display
-                        nameOfPicture = b.picInfo;
-                        imgToSend.Tag = nameOfPicture.Name;
+                            // We bind the name for the later display
+                            nameOfPicture = b.picInfo;
+                            imgToSend.Tag = nameOfPicture.Name;
 
-                        // Adding to the list
-                        toSend.Add(imgToSend);
+                            // Adding to the list
+                            toSend.Add(imgToSend);
 
+                        }
+                        nameOfAlbum = a.name;
                     }
-                    nameOfAlbum = a.name;
                 }
+
+                // Launching the slideshow
+                slideShow diapo = new slideShow(toSend, nameOfAlbum);
+                diapo.ShowDialog();
             }
 
-            // Launching the slideshow
-            slideShow diapo = new slideShow(toSend, nameOfAlbum);
-            diapo.ShowDialog();
 
         }
         #endregion
@@ -286,63 +370,69 @@ namespace photoViewer
         #region WEBPAGE
         private void webView_Click(object sender, EventArgs e)
         {
-            try
+            if (albums.Count > 0)
             {
-                StreamWriter webPageGen = new StreamWriter(Assembly.GetExecutingAssembly().Location + "album.html");
-                String picturePath;
-                String albumName;
-
-                
-                // Looping to find the active Album
-                foreach (Album a in albums)
+                try
                 {
-                    if (a.IsActive)
+                    StreamWriter webPageGen = new StreamWriter(Assembly.GetExecutingAssembly().Location + "album.html");
+                    String picturePath;
+                    String albumName;
+                  
+
+                    // Looping to find the active Album
+                    foreach (Album a in albums)
                     {
-                        int j = 0;
-                        albumName = a.name;
-
-                        // Header of the HTML file.
-                        webPageGen.WriteLine("<html>\n<head>\n<title>"+albumName+"</title>\n</head>\n<body Bgcolor=\"#333333\"><p align=\"center\">\n<b><u><div align=\"center\"><center>\n <br>	<table border=\"0\" cellpadding=\"3\" cellspacing=\"10\" width=\"600\">");
-
-                        // Opens a row
-                        webPageGen.WriteLine("<tr>");
-                        foreach (Picture p in a.GetPictureList())
+                        if (a.IsActive)
                         {
-                            // Get the picture path
-                            picturePath = p.picInfo.FullName;
                             
-                            // Center and display a picture
-                            webPageGen.WriteLine("<td width=\"120\" align=\"center\">\n<img border=\"0\" src=\" " + picturePath + "\" align=\"center\" width=120 height=120></a></td>");
-                            j++;
-
-                            // 4 pictures per row
-                            if (j % 4 == 0)
+                            int j = 0;
+                            albumName = a.name;
+                          
+                            // Header of the HTML file.
+                            webPageGen.WriteLine("<html>\n<head>\n<title>" + albumName + "</title>\n</head>\n<body Bgcolor=\"#333333\"><p align=\"center\">\n<b><u><div align=\"center\"><center>\n <br>	<table border=\"0\" cellpadding=\"3\" cellspacing=\"10\" width=\"600\">");
+                            MessageBox.Show(albums.Count.ToString());
+                            // Opens a row
+                            webPageGen.WriteLine("<tr>");
+                            
+                            foreach (Picture p in a.GetPictureList())
                             {
-                                webPageGen.WriteLine("</tr>");
-                                webPageGen.WriteLine("<tr>");
+                                
+                                // Get the picture path
+                                picturePath = p.picInfo.FullName;
+
+                                // Center and display a picture
+                                webPageGen.WriteLine("<td width=\"120\" align=\"center\">\n<img border=\"0\" src=\" " + picturePath + "\" align=\"center\" width=120 height=120></a></td>");
+                                j++;
+
+                                // 4 pictures per row
+                                if (j % 4 == 0)
+                                {
+                                    webPageGen.WriteLine("</tr>");
+                                    webPageGen.WriteLine("<tr>");
+                                }
+
                             }
-
+                            // Closing header
+                            webPageGen.WriteLine("</center>\n</div>\n\n</body>\n</html>");
+                            webPageGen.Close();
                         }
-
-
+                        
 
                     }
-                    // Closing header
-                    webPageGen.WriteLine("</center>\n</div>\n\n</body>\n</html>");
-                    webPageGen.Close();
+                    
+                    // Launching a process to open the html File generated
+                    Process showWebPage = new Process();
+                    showWebPage.StartInfo.FileName = Assembly.GetExecutingAssembly().Location + "album.html";
+                    showWebPage.Start();
+
 
                 }
-
-                // Launching a process to open the html File generated
-                Process showWebPage = new Process();
-                showWebPage.StartInfo.FileName = Assembly.GetExecutingAssembly().Location + "album.html";
-                showWebPage.Start();
-
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
 
-            }
 
         }
         #endregion
