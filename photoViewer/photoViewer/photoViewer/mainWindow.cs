@@ -13,6 +13,7 @@ using System.Drawing.Text;
 using System.IO;
 using System.Reflection;
 using System.Diagnostics;
+using System.Xml.Serialization;
 
 namespace photoViewer
 {
@@ -32,13 +33,12 @@ namespace photoViewer
         private AlbumList albums;
         private albumThumbnail albumView;
         private Picture big;
-        private int Click;
+        //private int Click;
+        private XmlSerializer _xs;
 
         public mainWindow()
         {
-
             InitializeComponent();
-
         }
 
 
@@ -48,6 +48,7 @@ namespace photoViewer
             sizeIndicatorUpdate();
             tableImages.Controls.Clear();
 
+            if (albums == null) return; // Safety check
             foreach (Album a in albums)
             {
                 if (a.IsActive) // FIXME
@@ -132,25 +133,129 @@ namespace photoViewer
 
         private void mainWindow_Load(object sender, EventArgs e)
         {
-            /* Unarchive data (AlbumList) */
 
-            PictureList l, ll;
-            l = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
-            ll = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures));
-            l.ExtendWithList(ll);
-            l.LoadAll();
+            try
+            {
+                //Picture p = new Picture("C:\\a.jpg");
+                //_xs = new XmlSerializer(typeof(Picture));
+                _xs = new System.Xml.Serialization.XmlSerializer(typeof(AlbumList));
+                this.load();
+                //_xs.Serialize(Console.Out, p);
+            }
+            catch (Exception excp)
+            {
+                Console.WriteLine("********");
+                Console.WriteLine("********");
+                Console.WriteLine("******** " + excp.Message);
+                Console.WriteLine("******** " + excp.InnerException.Message);
+                Console.WriteLine("********");
+                Console.WriteLine("********");
+            }
+            /*
+                        PictureList l, ll;
+                        l = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+                        ll = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures));
+                        l.ExtendWithList(ll);
+                        l.LoadAll();
 
-            albums = new AlbumList();
-            Album newAlb = new Album(l, "Default Album");
-            newAlb.IsActive = true;
-            albums.Add(newAlb);
+                        albums = new AlbumList();
+                        Album newAlb = new Album(l, "Default Album");
+                        newAlb.IsActive = true;
+                        albums.Add(newAlb);
+
+        
+           
+                    */
 
 
             _RefreshPictureView();
             _RefreshAlbumView();
         }
 
+        private void save()
+        {
+           
+                if (albums == null) return;
+                using (StreamWriter wr = new StreamWriter("Albums.xml"))
+                {
 
+                    try
+                    {
+                        _xs.Serialize(wr, albums);
+                    }
+                    catch (Exception excp)
+                    {
+                        Console.WriteLine("******** ERR");
+                        Console.WriteLine("********");
+                        Console.WriteLine("******** " + excp.Message);
+                        Console.WriteLine("******** " + excp.InnerException.Message);
+                        Console.WriteLine("********");
+                        Console.WriteLine("********");
+                    }
+                    finally
+                    {
+                        wr.Close();
+                    }
+                }
+          
+        }
+
+
+        private void load()
+        {
+            string path = "Albums.xml";
+            FileStream fs;
+
+
+            if (!File.Exists(path))
+            {
+                fs = File.Create(path);
+                fs.Close();
+            }
+
+            using (StreamReader rd = new StreamReader("Albums.xml"))
+            {
+
+                try
+                {
+                    albums = _xs.Deserialize(rd) as AlbumList;
+                    albums.SetActive(0);
+                    albums[0].Load();
+                }
+                catch (Exception excp)
+                {
+                    Console.WriteLine("********");
+                    Console.WriteLine("********");
+                    Console.WriteLine("******** " + excp.Message);
+                    Console.WriteLine("******** " + excp.InnerException.Message);
+                    Console.WriteLine("********");
+                    Console.WriteLine("********");
+                }
+                finally
+                {
+                    rd.Close();
+                }
+
+
+                if (albums == null)
+                {
+                    load_default();
+                    save();
+                }
+            }
+        }
+
+        private void load_default()
+        {
+            PictureList pl;
+
+            pl = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures));
+            pl.LoadAll();
+            Album a = new Album(pl, "Shared Pictures");
+            albums = new AlbumList();
+            albums.Add(a);
+            albums.SetActive(a);
+        }
 
         #region DropShadow & Moveable
         // Adds the dropshadow
@@ -295,7 +400,7 @@ namespace photoViewer
             foreach (Album alb in albums)
             {
                 alb.IsActive = false;
-   
+
                 if (alb.name.CompareTo(a) == 0)
                 {
                     alb.IsActive = true;
@@ -377,26 +482,26 @@ namespace photoViewer
                     StreamWriter webPageGen = new StreamWriter(Assembly.GetExecutingAssembly().Location + "album.html");
                     String picturePath;
                     String albumName;
-                  
+
 
                     // Looping to find the active Album
                     foreach (Album a in albums)
                     {
                         if (a.IsActive)
                         {
-                            
+
                             int j = 0;
                             albumName = a.name;
-                          
+
                             // Header of the HTML file.
                             webPageGen.WriteLine("<html>\n<head>\n<title>" + albumName + "</title>\n</head>\n<body Bgcolor=\"#333333\"><p align=\"center\">\n<b><u><div align=\"center\"><center>\n <br>	<table border=\"0\" cellpadding=\"3\" cellspacing=\"10\" width=\"600\">");
                             MessageBox.Show(albums.Count.ToString());
                             // Opens a row
                             webPageGen.WriteLine("<tr>");
-                            
+
                             foreach (Picture p in a.GetPictureList())
                             {
-                                
+
                                 // Get the picture path
                                 picturePath = p.picInfo.FullName;
 
@@ -416,10 +521,10 @@ namespace photoViewer
                             webPageGen.WriteLine("</center>\n</div>\n\n</body>\n</html>");
                             webPageGen.Close();
                         }
-                        
+
 
                     }
-                    
+
                     // Launching a process to open the html File generated
                     Process showWebPage = new Process();
                     showWebPage.StartInfo.FileName = Assembly.GetExecutingAssembly().Location + "album.html";

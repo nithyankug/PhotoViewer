@@ -6,31 +6,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 
 namespace photoViewer
-{ 
+{
+    [Serializable]
     public class Picture
     {
         // internal attributes
-        public FileInfo picInfo { get; set; }
-        public Image pictureFile { get; set; }
+        [XmlIgnore] public FileInfo picInfo { get; set; }
+        [XmlIgnore] public Image pictureFile { get; set; }
         public string category { get; set; }
         public int rating { get; set; }
         public string comment { get; set; }
         private int nbInstance { get; set; }
+        public string _filename; // Internal usage (fileinfo is not serializable)
        
+        public Picture() {}
+
         public Picture(string path)
         {
-            picInfo = new FileInfo(path);
-           
+            _filename = path;
+            picInfo = new FileInfo(path);  
         }
 
         public void Load()
         {
-            if (picInfo == null) return;
+            if (picInfo == null) picInfo = new FileInfo(_filename);
             pictureFile = Image.FromFile(picInfo.FullName);
-            Console.WriteLine("Loading: " + picInfo.FullName);
         }
 
         static public bool IsSupportedFormat(string extension)
@@ -53,6 +57,7 @@ namespace photoViewer
         {
             PictureList list = new PictureList();
             // FIXME is path is a file, import it!
+            Console.WriteLine(path);
             foreach (string f in Directory.GetFiles(path))
             {
                 if (IsSupportedFormat(Path.GetExtension(f)))
@@ -69,12 +74,14 @@ namespace photoViewer
                     l = ExtractListFromPath(d, true);
                 list.ExtendWithList(l);
             }
+              
 
             return list;
         }
 
     }
 
+    [Serializable]
     public class PictureList : List<Picture>
     {
         public void ExtendWithList(PictureList extend)
@@ -90,6 +97,7 @@ namespace photoViewer
                 p.Load();
         }
 
+        public PictureList() { }
         
     }
 
