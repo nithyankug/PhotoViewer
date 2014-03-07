@@ -219,8 +219,11 @@ namespace photoViewer
                 try
                 {
                     albums = _xs.Deserialize(rd) as AlbumList;
-                    albums.SetActive(0);
-                    albums[0].Load();
+                    if (albums.Count >= 1)
+                    {
+                        albums.SetActive(0);
+                        albums[0].Load();
+                    }
                 }
                 catch (Exception excp)
                 {

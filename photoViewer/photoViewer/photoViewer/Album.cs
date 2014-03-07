@@ -15,7 +15,7 @@ namespace photoViewer
         public void SetActive(Album album)
         {
             foreach (Album a in this)
-                a.IsActive = true;// (a == album);
+                a.IsActive = (a == album);
         }
 
         public void SetActive(int idx)
