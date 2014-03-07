@@ -215,14 +215,12 @@ namespace photoViewer
 
             using (StreamReader rd = new StreamReader("Albums.xml"))
             {
-
                 try
                 {
                     albums = _xs.Deserialize(rd) as AlbumList;
                     if (albums.Count >= 1)
                     {
                         albums.SetActive(0);
-                        albums[0].Load();
                     }
                 }
                 catch (Exception excp)
@@ -253,7 +251,6 @@ namespace photoViewer
             PictureList pl;
 
             pl = Picture.ExtractListFromPath(Environment.GetFolderPath(Environment.SpecialFolder.CommonPictures));
-            pl.LoadAll();
             Album a = new Album(pl, "Shared Pictures");
             albums = new AlbumList();
             albums.Add(a);

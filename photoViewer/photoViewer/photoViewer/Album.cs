@@ -14,14 +14,20 @@ namespace photoViewer
     {
         public void SetActive(Album album)
         {
+            bool b;
             foreach (Album a in this)
-                a.IsActive = (a == album);
+            {
+                b = (a == album);
+                a.IsActive = b;
+                if (b) a.Load();
+                else a.UnLoad();
+            }
         }
 
         public void SetActive(int idx)
         {
-            foreach (Album a in this)
-                this[idx].IsActive = (this[idx] == a);
+            if (idx >= 0 && idx < this.Count())
+                SetActive(this[idx]);
         }
 
     }
@@ -54,6 +60,11 @@ namespace photoViewer
         public void Load()
         {
             this.Pictures.LoadAll();
+        }
+
+        public void UnLoad()
+        {
+            this.Pictures.UnLoadAll();
         }
 
         public Album(PictureList pictures, String name)

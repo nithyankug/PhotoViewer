@@ -37,6 +37,11 @@ namespace photoViewer
             pictureFile = Image.FromFile(picInfo.FullName);
         }
 
+        public void UnLoad()
+        {
+            pictureFile = null;
+        }
+
         static public bool IsSupportedFormat(string extension)
         {
             if (extension == null) return false;
@@ -97,6 +102,11 @@ namespace photoViewer
                 p.Load();
         }
 
+        public void UnLoadAll()
+        {
+            foreach (Picture p in this)
+                p.UnLoad();
+        }
         public PictureList() { }
         
     }
